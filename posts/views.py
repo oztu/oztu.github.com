@@ -10,6 +10,7 @@ def index(request):
 
 def post(request, slug):
     post = get_object_or_404(Post, pk=slug)
+    return render_to_response('posts/post.html', {'post':post})
     if(len(post.url) == 0):
         return HttpResponse(post.html)
     else:
