@@ -4,10 +4,10 @@ from datetime import datetime
 class Post(models.Model):
     title = models.CharField(max_length=64)    
     description = models.CharField(max_length=140)    
-    url = models.CharField(max_length=140)    
+    url = models.CharField(max_length=140, blank=True)    
     head = models.TextField(blank=True)
     body = models.TextField()
-    html = models.TextField()
+    html = models.TextField(blank=True)
     visible = models.BooleanField(default=True)
     is_promoted_to_front_page = models.BooleanField(default=True)
     date = models.DateTimeField(default=datetime.now())    
