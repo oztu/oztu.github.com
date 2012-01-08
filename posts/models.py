@@ -8,6 +8,7 @@ class Post(models.Model):
     head = models.TextField(blank=True)
     body = models.TextField()
     html = models.TextField()
+    visible = models.BooleanField(default=True)
     is_promoted_to_front_page = models.BooleanField(default=True)
     date = models.DateTimeField(default=datetime.now())    
     added = models.DateTimeField(auto_now_add=True)
