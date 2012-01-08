@@ -3,7 +3,7 @@ from datetime import datetime
 
 class Post(models.Model):
     title = models.CharField(max_length=64)    
-    description = models.CharField(max_length=140)    
+    description = models.CharField(max_length=140,blank=True)    
     url = models.CharField(max_length=140, blank=True)    
     head = models.TextField(blank=True)
     body = models.TextField()
