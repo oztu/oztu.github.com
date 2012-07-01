@@ -5,6 +5,5 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
-    (r'^$', 'ozanturgut.site.views.index'),
-    (r'^(?P<slug>[\w\-]+)(/|$)', 'ozanturgut.site.views.post'),
+    (r'^$', 'ozanturgut.site.views.index')
 )
