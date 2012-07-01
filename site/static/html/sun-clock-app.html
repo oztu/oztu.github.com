@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<!-- Sun Clock 2010-11-26 sun-clock -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <meta name="viewport" content="width=900; user-scalable=yes" />  
+    <title>Sun Clock</title>
+    
+    <script language="javascript" type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAArwjBsqpQBqZf_Vw6Z0iVuRS4-pfS7z3-gHFHXWOwWueP17_RrhRd1nA-JiOxps0nujxsBhzpyuTK3w"></script>    
+    <script language="javascript" type="text/javascript">
+		google.load("webfont", "1");
+		google.setOnLoadCallback(function() {
+			WebFont.load({
+			  google: {
+				families: ['Vollkorn','Cardo']
+			  }});
+		});
+	</script>
+
+    
+    <link href="/media/base.css" rel="stylesheet" />
+    
+	<link href="/media/posts/base.css" media="screen" rel="stylesheet" type="text/css" />
+
+    
+<script type="text/javascript" src="/media/common/script/o_tools/sunny_minified.js" ></script>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript">
+
+	google.load("dojo", "1.5");
+
+	google.setOnLoadCallback(initialize);
+
+	var geocoder;
+
+	var time_field;
+
+	var Current = {};
+
+	 
+
+	function createCookie(name,value,days) {
+
+	    if (days) {
+
+	        var date = new Date();
+
+	        date.setTime(date.getTime()+(days*24*60*60*1000));
+
+	        var expires = "; expires="+date.toGMTString();
+
+	    }
+
+	    else var expires = "";
+
+	    document.cookie = name+"="+value+expires+"; path=/";
+
+	}
+
+	
+
+	function readCookie(name) {
+
+	    var nameEQ = name + "=";
+
+	    var ca = document.cookie.split(';');
+
+	    for(var i=0;i < ca.length;i++) {
+
+	        var c = ca[i];
+
+	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+
+	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+
+	    }
+
+	    return null;
+
+	}
+
+	
+
+	function eraseCookie(name) {
+
+	    createCookie(name,"",-1);
+
+	}	
+
+	
+
+	
+
+	
+
+	function initialize(){
+
+		dojo.connect(dojo.byId("location"), "onclick", newLocation);
+
+		time_field = dojo.byId("time");
+
+			
+
+		Current.place = readCookie('place') || "Seattle";
+
+		Current.latitude = parseFloat(readCookie('latitude')) || 47.6;
+
+		Current.longitude = parseFloat(readCookie('longitude')) || -122.32;
+
+		reset();
+
+		
+
+	    geocoder = new google.maps.Geocoder();
+
+	}
+
+	
+
+	function newLocation(){
+
+		var new_place = prompt("New Location:", Current.place);
+
+		if(!new_place) return;
+
+
+
+	    geocoder.geocode( { 'address': new_place}, function(results, status) {
+
+	      if (status == google.maps.GeocoderStatus.OK) {
+
+		  	if(typeof results[0] == "undefined"){ return;}
+
+			Current.place = results[0].formatted_address?results[0].formatted_address:new_place;
+
+			Current.latitude = results[0].geometry.location.lat();
+
+			Current.longitude = results[0].geometry.location.lng();
+
+			createCookie('place', Current.place, 0);
+
+			createCookie('latitude', Current.latitude, 0);
+
+			createCookie('longitude', Current.longitude, 0);
+
+		  	reset();
+
+	      } else {
+
+	        console.log("Geocode was not successful for the following reason: " + status);
+
+	      }
+
+	    });
+
+	}	
+
+	
+
+	function reset(){
+
+		var today = new Date();
+
+		var time = {year:today.getFullYear(), month:today.getMonth() +1, day: today.getDate()};
+
+		var space = {latitude: Current.latitude, longitude: Current.longitude};
+
+		dojo.byId("location").innerHTML = Current.place;
+
+		Current.sunset = Sunny.sunset(space, time);
+
+		var until_sunset = Current.sunset.getTime() - today.getTime();
+
+		var future = new Date(today.getTime());
+
+		while(until_sunset < 0){
+
+			future.setTime(future.getTime() + 86400000);
+
+		 	time = {year:future.getFullYear(), month:future.getMonth() +1, day: future.getDate()};
+
+			Current.sunset = Sunny.sunset(space, time);
+
+			until_sunset = Current.sunset.getTime() - today.getTime();
+
+		}
+
+		Current.sunrise = Sunny.sunrise(space, time);
+
+			
+
+		update();
+
+	}
+
+	
+
+	function update(){
+
+		setTimeout("update()",3000);
+
+		var now = new Date();
+
+		var until_sunrise = Current.sunrise.getTime() - now.getTime();
+
+		var until_sunset = Current.sunset.getTime() - now.getTime();
+
+			
+
+		if(until_sunrise > 0 && until_sunrise < until_sunset){
+
+			minutes = until_sunrise/1000/60;
+
+			minute = minutes%60;
+
+			hour = (minutes - minute)/60
+
+			minute = Math.floor(minute);
+
+			if(minute < 10) minute = "0" + minute;
+
+			time_field.innerHTML = hour + ":" + minute + " until day" ;
+
+			time_field.title = "Sunrise is " + Current.sunrise;
+
+		} else if(until_sunset > 0) {
+
+			minutes = until_sunset/1000/60;
+
+			minute = minutes%60;
+
+			hour = (minutes - minute)/60;
+
+			minute = Math.floor(minute);			
+
+			if(minute < 10) minute = "0" + minute;
+
+			time_field.innerHTML = hour + ":" + minute + " until night";
+
+			time_field.title = "Sunset is " + Current.sunset;
+
+		} else {
+
+			reset();
+
+		}
+
+		
+
+	}
+
+	
+
+</script>
+
+<style type="text/css">
+
+	#location{border-bottom:1px solid gray; cursor:pointer;}
+
+	#Content{font-family:Calibri, 'Droid Sans', Helvetica, 'Lucida Sans', Verdana, 'Gill Sans MT', Arial, sans-serif;}
+
+	#clock{text-align:center; font-size:3em; margin-top:70px; height:2em; color:gray;}
+
+	#time{color:black;}
+
+	#description{color:gray; font-style:italic; width:450px; margin:30px auto;}
+
+</style>
+</head>
+<body>
+
+<div id="Header"><a href="/">Ozan Turgut's Website</a></div>
+<div id="Content" class="base">
+    <div>
+    <div id="clock"><span id="time"></span> in <span id="location"></span>.</div>
+
+<div id="description">
+
+	This 'clock' shows you how much time is left until the next sunrise or sunset. Click on the underlined text to change the location. <a href="/sunny-for-javascript">Click here</a> for more information on how this information is calculated.
+
+	
+
+</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4017245-5']);
+  _gaq.push(['_setDomainName', '.oztu.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
