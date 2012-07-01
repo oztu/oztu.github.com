@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block scripts %}
+{% endblock %}
+{% block stylesheets %}
+<link href="/static/style/layout.css" rel="stylesheet" />
+<script src="/static/script/jquery.js"></script>
+<script src="/static/script/index.js"></script>
+{% endblock %}
+{% block body %}
+<h1><a href="/">Ozan Turgut's Website</a></h1>
+<div id="Body">
+    {% block content %}
+    {% endblock %}
+</div>
+{% endblock %}

@@ -3,16 +3,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
     <meta name="viewport" content="width=900; user-scalable=yes" />  
-    <title>Ozan Turgut's Website{% block title %}{% endblock %}</title>
-    {% block scripts %}{% endblock %}
-    
-    <link href="/media/base.css" rel="stylesheet" />
+    <title>{% block title %}Ozan Turgut's Website{% endblock %}</title>
+    <link href="/static/style/reset.css" rel="stylesheet" />
+	
     {% block stylesheets %}{% endblock %}
     
 {% block head %}{% endblock %}
 </head>
 <body>
 {% block body %}{% endblock %}
+{% block scripts %}{% endblock %}
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-4017245-5']);

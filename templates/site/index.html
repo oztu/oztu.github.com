@@ -1,0 +1,154 @@
+{% extends "site/base.html" %}
+
+{% block title %}{{object.title}}{% endblock %}
+{% block head %}{{object.head|safe}}{% endblock %}
+{% block content %}
+<div id="AboutMe">
+	<header>
+		<h2>About Me</h2>
+	</header>
+	<p>
+		<img id="ProfileImage" src="/static/image/me.jpg"/>
+		
+		I love math and I love creating. Computer science allows me to do both, so I study and practice it.</p>
+		
+		<p>I'm experienced in building large websites and beautiful apps. I
+		currently work with <a href="http://www.turn.com">Turn</a> in San Francisco.
+	</p>
+	<p>You can find me at <a href="http://www.linkedin.com/in/ozanturgut">LinkedIn</a>, <a href="http://www.facebook.com/ozanturgut">Facebook</a>, <a href="#">GitHub</a> or <a href="mailto:ozanturgut@gmail.com">ozanturgut@gmail.com</a>.</p>
+</div>
+<div id="Posts">
+	<header>
+		<h2>Posts</h2>
+	</header>
+	<div class="scrollableCave">
+		<ul class="scroller horizontalScroller">
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/find-the-sun.jpg"/>
+					<label>
+						Sunrise/sunset Clock
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/europe-trip.jpg"/>
+					<label>
+						Europe Trip 2012
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/planning.jpg"/>
+					<label>
+						Planning My Europe Trip
+					</label>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="Projects">
+	<header>
+		<h2>My Work</h2>
+	</header>
+	<div class="scrollableCave">
+		<ul class="scroller horizontalScroller">
+			<li>
+				<a class="imgWrapper" href="#">
+					<img src="/static/image/title-card/avaya-work.jpg"/>
+					<label>
+						Avaya Support Site Admin Console
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper" href="#">
+					<img src="/static/image/title-card/tmo-prepaid-work.jpg"/>
+					<label>
+						T-Mobile Prepaid Site
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper" href="#">
+					<img src="/static/image/title-card/tmo-testdrive.jpg"/>
+					<label>
+						T-Mobile Testdrive Web App
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/benbridge-work.jpg"/>
+					<label>
+						Ben Bridge Site Speed Optimization
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/umpqua-work.jpg"/>
+					<label>
+						Umpqua Bank Build Your Block Facebook App
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/thewashboard-work.jpg"/>
+					<label>
+						theWashBoard.org Experience Improvements
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/college-spark-work.jpg"/>
+					<label>
+						College Spark Website Redesign
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/GLG-calendar.jpg"/>
+					<label>
+						GLG Resource Scheduling App
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/intervention-explorer.jpg"/>
+					<label>
+						College Spark Intervention Data Explorer App
+					</label>
+				</a>
+			</li>
+			<li>
+				<a class="imgWrapper">
+					<img src="/static/image/title-card/find-the-sun.jpg"/>
+					<label>
+						Sunrise/sunset Clock
+					</label>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+<!--<div id="Highlights" class="frontPageSection">
+	<h2>Highlights</h2>
+
+
+<p><img /><strong><a href="#">Finding the Sun with Javascript</a></strong> &ndash; Using just math, algorithms from NOAA, and the Google Maps API, find out when the sun will set or rise for any location.</p>
+
+
+<p><img /><strong><a href="#">College Spark Intervention Explorer</a></strong> &ndash; A small web-app I developed for College Spark to make their student intervention data easier to consume and explore.</p>
+
+</div>-->
+{% endblock %}
