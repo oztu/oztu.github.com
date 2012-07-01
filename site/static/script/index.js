@@ -31,7 +31,12 @@ var initScrollableCaves = function(){
 		scroller.scroll(function(){
 			setCaveShadows(scrollableCave, scroller);
 		});
-
+		
+		$(window).resize(function(){
+			setCaveShadows(scrollableCave, scroller);
+		});
+		
 		setCaveShadows(scrollableCave, scroller);
 	});
+    
 }

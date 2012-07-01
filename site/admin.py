@@ -3,7 +3,7 @@ from django.contrib import admin
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
-    list_display = ('title', 'added')
+    list_display = ('title', 'added', 'date')
     list_filter = ['added']
     date_hierarchy = 'added'
 

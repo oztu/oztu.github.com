@@ -6,13 +6,13 @@
     <title>{% block title %}Ozan Turgut's Website{% endblock %}</title>
     <link href="/static/style/reset.css" rel="stylesheet" />
 	
-    {% block stylesheets %}{% endblock %}
+    {% block basestylesheets %}{% endblock %}
     
 {% block head %}{% endblock %}
 </head>
 <body>
 {% block body %}{% endblock %}
-{% block scripts %}{% endblock %}
+{% block basescripts %}{% endblock %}
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-4017245-5']);

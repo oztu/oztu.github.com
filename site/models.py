@@ -3,10 +3,11 @@ from datetime import datetime
 
 class Post(models.Model):
     added = models.DateTimeField(auto_now_add=True, db_index=True)
+    date = models.DateTimeField()
     slug = models.SlugField(primary_key=True, max_length=64, db_index=True)
     url = models.CharField(max_length=140, blank=True)    
     title = models.CharField(max_length=140, blank=True, db_index=True)
-    title_card = models.ImageField(blank=True, upload_to='/static/image/title-card/')
+    title_card = models.ImageField(blank=True, upload_to='image/title-card/')
     
     def __unicode__(self):
         return self.title
@@ -17,7 +18,7 @@ class Project(models.Model):
     slug = models.SlugField(primary_key=True, max_length=64, db_index=True)
     url = models.CharField(max_length=140, blank=True)    
     title = models.CharField(max_length=140, blank=True, db_index=True)
-    title_card = models.ImageField(blank=True, upload_to='/static/image/title-card/')
+    title_card = models.ImageField(blank=True, upload_to='image/title-card/')
 
     def __unicode__(self):
         return self.title

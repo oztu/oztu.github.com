@@ -1,7 +1,14 @@
 {% extends "site/base.html" %}
 
-{% block title %}{{object.title}}{% endblock %}
+{% block title %}Ozan Turgut's Website{% endblock %}
 {% block head %}{{object.head|safe}}{% endblock %}
+{% block scripts %}
+	<script src="/static/script/index.js"></script>
+{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/style/index.css">
+{% endblock %}
+
 {% block content %}
 <div id="AboutMe">
 	<header>
@@ -23,30 +30,16 @@
 	</header>
 	<div class="scrollableCave">
 		<ul class="scroller horizontalScroller">
+			{% for post in posts %}
 			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/find-the-sun.jpg"/>
-					<label>
-						Sunrise/sunset Clock
-					</label>
+				<a class="imgWrapper" href="{% if post.url %}{{post.url}}{% else %}/post/{{post.slug}}{% endif %}">
+					<img src="/static/upload/{{ post.title_card }}"/>
+					<h3>
+						{{ post.title }}
+					</h3>
 				</a>
 			</li>
-			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/europe-trip.jpg"/>
-					<label>
-						Europe Trip 2012
-					</label>
-				</a>
-			</li>
-			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/planning.jpg"/>
-					<label>
-						Planning My Europe Trip
-					</label>
-				</a>
-			</li>
+			{% endfor %}
 		</ul>
 	</div>
 </div>
@@ -56,86 +49,16 @@
 	</header>
 	<div class="scrollableCave">
 		<ul class="scroller horizontalScroller">
+			{% for project in projects %}
 			<li>
-				<a class="imgWrapper" href="#">
-					<img src="/static/image/title-card/avaya-work.jpg"/>
-					<label>
-						Avaya Support Site Admin Console
-					</label>
+				<a class="imgWrapper" href="{% if project.url %}{{project.url}}{% else %}/post/{{project.slug}}{% endif %}">
+					<img src="/static/upload/{{ project.title_card }}"/>
+					<h3>
+						{{ project.title }}
+					</h3>
 				</a>
 			</li>
-			<li>
-				<a class="imgWrapper" href="#">
-					<img src="/static/image/title-card/tmo-prepaid-work.jpg"/>
-					<label>
-						T-Mobile Prepaid Site
-					</label>
-				</a>
-			</li>
-			<li>
-				<a class="imgWrapper" href="#">
-					<img src="/static/image/title-card/tmo-testdrive.jpg"/>
-					<label>
-						T-Mobile Testdrive Web App
-					</label>
-				</a>
-			</li>
-			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/benbridge-work.jpg"/>
-					<label>
-						Ben Bridge Site Speed Optimization
-					</label>
-				</a>
-			</li>
-			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/umpqua-work.jpg"/>
-					<label>
-						Umpqua Bank Build Your Block Facebook App
-					</label>
-				</a>
-			</li>
-			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/thewashboard-work.jpg"/>
-					<label>
-						theWashBoard.org Experience Improvements
-					</label>
-				</a>
-			</li>
-			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/college-spark-work.jpg"/>
-					<label>
-						College Spark Website Redesign
-					</label>
-				</a>
-			</li>
-			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/GLG-calendar.jpg"/>
-					<label>
-						GLG Resource Scheduling App
-					</label>
-				</a>
-			</li>
-			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/intervention-explorer.jpg"/>
-					<label>
-						College Spark Intervention Data Explorer App
-					</label>
-				</a>
-			</li>
-			<li>
-				<a class="imgWrapper">
-					<img src="/static/image/title-card/find-the-sun.jpg"/>
-					<label>
-						Sunrise/sunset Clock
-					</label>
-				</a>
-			</li>
+			{% endfor %}
 		</ul>
 	</div>
 </div>

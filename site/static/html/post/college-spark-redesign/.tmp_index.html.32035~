@@ -17,11 +17,42 @@
 		});
 	</script>
 
-    
-    <link href="/media/base.css" rel="stylesheet" />
-    
-	<link href="/media/posts/base.css" media="screen" rel="stylesheet" type="text/css" />
+     <style>
+	    *{margin:0px; padding:0px; font-weight:normal;}
+		body{font-family:Arial,Tahoma,"Lucida Sans", "Lucida Sans Unicode", Tahoma, Helvetica, Verdana, "Gill Sans MT", Arial, sans-serif;}
+		h1, h2,h3,h4,h5,h6,h7{font-size:1em; font-weight:normal;}
+		code{ white-space:pre; }
+		a{text-decoration:none; color:blue;}
+		p{line-height:150%;}
+		img{border:none;}
+		li{list-style:none;}
 
+
+	/*
+	oztu.org Posts Style Sheet
+	November 2010
+	*/
+	body{min-width:900px;}
+	.base > div {margin:0 auto; width:900px;}
+	#Header{height:35px; text-align:center; border-bottom:1px solid #ccc; background-color:#efefef;}
+	#Header > a{
+	        margin:0 auto;
+	        display:block;
+	        color:black;
+	        font-size:1.25em;
+	        letter-spacing:2px;
+	        font-family: 'Vollkorn', Helvetica, "Lucida Sans",  Verdana, "Gill Sans MT", Arial, sans-serif;
+	        padding-top:6px;}
+	#Content{padding-top:15px;}
+	#Content > div{
+	        position:relative;
+	        overflow:hidden;
+	}
+	
+	div.box{width:430px; background-color:#ccc; height: 258px; overflow:hidden; float:left; margin:10px;}
+	div.box > *{padding:10px;}
+	div.box > h2{font-size:1.3em; opacity:.6; filter: alpha(opacity = 60); background-color:black; color:white;}
+</style>
     
 <link rel="stylesheet" href="/media/common/litebox/lightbox.css" type="text/css" media="screen" />
 

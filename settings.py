@@ -35,11 +35,11 @@ USE_L10N = True
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 #MEDIA_ROOT = '/home/ozanturgut/webapps/django_static'
-MEDIA_ROOT = BASE_PATH + '/media/'
+MEDIA_ROOT = BASE_PATH + '/site/static/upload/'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = 'http://www.oztu.org/media/'
+MEDIA_URL = 'http://www.oztu.org/static/upload/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -50,7 +50,7 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 SECRET_KEY = local_settings.SECRET_KEY
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_PATH + '/static/'
+STATIC_ROOT = BASE_PATH + '/site/static/'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
