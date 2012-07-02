@@ -24,6 +24,8 @@
 
 .horizontalScrollableCave li{
 	margin:auto 10px;
+	position:relative;
+	-webkit-transform:translate3d(0,0,0);
 }
 
 .horizontalScrollableCave li:first-child{
@@ -36,6 +38,8 @@
 
 .verticalScrollableCave li{
 	margin:10px auto;
+	position:relative;
+	-webkit-transform:translate3d(0,0,0);
 }
 
 .verticalScrollableCave li:first-child{
