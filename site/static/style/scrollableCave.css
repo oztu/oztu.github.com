@@ -6,7 +6,7 @@
 
 .horizontalScrollableCave ul{
 	padding:10px 0px;
-	overflow-x:scroll; 
+	overflow-x:auto; 
 	overflow-y: hidden;
 	-webkit-overflow-scrolling:touch;
 	width:100%;
@@ -15,7 +15,7 @@
 
 .verticalScrollableCave ul{
 	padding:0px 10px;
-	overflow-y:scroll; 
+	overflow-y:auto; 
 	overflow-x: hidden;
 	-webkit-overflow-scrolling:touch;
 	height:100%;
@@ -24,8 +24,6 @@
 
 .horizontalScrollableCave li{
 	margin:auto 10px;
-	position:relative;
-	-webkit-transform:translate3d(0,0,0);
 }
 
 .horizontalScrollableCave li:first-child{
@@ -38,8 +36,6 @@
 
 .verticalScrollableCave li{
 	margin:10px auto;
-	position:relative;
-	-webkit-transform:translate3d(0,0,0);
 }
 
 .verticalScrollableCave li:first-child{

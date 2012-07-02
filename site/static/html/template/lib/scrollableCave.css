@@ -6,7 +6,7 @@
 
 .horizontalScrollableCave ul{
 	padding:10px 0px;
-	overflow-x:scroll; 
+	overflow-x:auto; 
 	overflow-y: hidden;
 	-webkit-overflow-scrolling:touch;
 	width:100%;
@@ -15,7 +15,7 @@
 
 .verticalScrollableCave ul{
 	padding:0px 10px;
-	overflow-y:scroll; 
+	overflow-y:auto; 
 	overflow-x: hidden;
 	-webkit-overflow-scrolling:touch;
 	height:100%;
