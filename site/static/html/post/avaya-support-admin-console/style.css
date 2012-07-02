@@ -11,6 +11,7 @@ header, #Body, footer{
 }
 
 #Images{
+	z-index:900;
 	position:absolute;
 	top:0px;
 	width:260px;

@@ -10,6 +10,7 @@ header, #Body, footer{
 	position:relative;
 }
 #Images{
+	z-index:900;
 	position:absolute;
 	top:0px;
 	width:260px;
