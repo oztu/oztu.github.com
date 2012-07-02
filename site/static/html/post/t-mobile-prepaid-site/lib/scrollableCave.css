@@ -1,0 +1,122 @@
+.horizontalScrollableCave, .verticalScrollableCave{
+	position:relative;
+	padding:0px;
+	overflow:hidden;
+}
+
+.horizontalScrollableCave ul,
+.verticalScrollableCave ul{
+	list-style-type:none;
+}
+
+.horizontalScrollableCave ul{
+	padding:10px 0px;
+	overflow-x:scroll; 
+	width:100%;
+	margin:0;
+}
+
+.verticalScrollableCave ul{
+	padding:0px 10px;
+	overflow-y:scroll; 
+	height:100%;
+	margin:0;
+}
+
+.horizontalScrollableCave li{
+	margin:auto 10px;
+}
+
+.horizontalScrollableCave li:first-child{
+	margin-left:5px;
+}
+
+.horizontalScrollableCave li:last-child{
+	margin-right:5px;
+}
+
+.verticalScrollableCave li{
+	margin:10px auto;
+}
+
+.verticalScrollableCave li:first-child{
+	margin-top:5px;
+}
+
+.verticalScrollableCave li:last-child{
+	margin-bottom:5px;
+}
+
+.caveShadowLeft, .caveShadowRight,.caveShadowTop, .caveShadowBottom{
+	position:absolute;
+	opacity:0;
+	
+	transition: .2s;
+	-moz-transition: .2s;
+	-webkit-transition: .2s;
+	-o-transition: .2s;
+	-ms-transition: .2s;
+}
+.caveShadowLeft, .caveShadowRight{
+    height: 100%;
+    width: 10px;
+	top:0px;
+}
+.caveShadowTop, .caveShadowBottom{
+	width:100%;
+	height:10px;
+	left:0px;
+}
+
+.caveShadowLeft{
+	left:0px;
+	
+    border-left: 1px solid rgba(0,0,0,0.2);
+    
+	background-image:-moz-radial-gradient(center left , ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:-o-radial-gradient(center left , ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:radial-gradient(center left , ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:-webkit-radial-gradient(center left , ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.caveShadowTop{
+	top:0px;
+	
+    border-top: 1px solid rgba(0,0,0,0.2);
+
+	background-image:-webkit-radial-gradient(center top, ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:-moz-radial-gradient(center top , ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:-o-radial-gradient(center top , ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:radial-gradient(center top, ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.caveShadowBottom{
+	bottom:0px;
+	
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    
+	background-image:-webkit-radial-gradient(center bottom, ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:-moz-radial-gradient(center bottom , ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:-o-radial-gradient(center bottom, ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:radial-gradient(center bottom, ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+}
+
+	
+.caveShadowRight{
+    right: 0px;
+
+    border-right: 1px solid rgba(0,0,0,0.2);
+	
+	background-image:-moz-radial-gradient(center right, ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:-o-radial-gradient(center right, ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:-webkit-radial-gradient(center right, ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+	background-image:radial-gradient(center right, ellipse farthest-side, rgba(0, 0, 0, 0.4), transparent);
+}
+
+.inTopCave .caveShadowTop,
+.inBottomCave .caveShadowBottom,
+.inLeftCave .caveShadowLeft, 
+.inRightCave .caveShadowRight{
+	opacity:1;
+}
+		

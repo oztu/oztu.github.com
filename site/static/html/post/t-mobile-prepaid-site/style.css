@@ -1,0 +1,32 @@
+header, #Body, footer{
+	padding:0px 20px
+}
+
+#Body{
+	padding-right:320px;
+	position:relative;
+}
+
+#Images{
+	position:absolute;
+	top:0px;
+	width:260px;
+	bottom:0px;
+	right:20px;
+}
+#Images li{
+	cursor:pointer;
+}			
+
+#Images li img{
+	width:100%;
+	min-height:100px;
+}
+
+.verticalScrollableCave li, .horizontalScrollableCave li{
+	-webkit-box-shadow: 0px 0px 7px -1px black;
+	-moz-box-shadow: 0px 0px 7px -1px black;
+	-o-box-shadow: 0px 0px 7px -1px black;
+	-ms-box-shadow: 0px 0px 7px -1px black;
+	box-shadow: 0px 0px 7px -1px black;
+}
