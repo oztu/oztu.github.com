@@ -63,6 +63,9 @@ var makeScrollableCave = function(selector, isVertical){
 		});
 		
 		setCaveShadows(scrollableCave, scroller);
+		setTimeout(function(){
+			setCaveShadows(scrollableCave, scroller);
+		},500);
 	});
 };
 
