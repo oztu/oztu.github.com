@@ -32,7 +32,7 @@
 		<ul class="scroller horizontalScroller">
 			{% for post in posts %}
 			<li>
-				<a class="imgWrapper" href="{% if post.url %}{{post.url}}{% else %}/post/{{post.slug}}{% endif %}">
+				<a class="imgWrapper" href="{% if post.url %}{{post.url}}{% else %}/post/{{post.slug}}/{% endif %}">
 					<img src="/static/upload/{{ post.title_card }}"/>
 					<h3>
 						{{ post.title }}
@@ -51,7 +51,7 @@
 		<ul class="scroller horizontalScroller">
 			{% for project in projects %}
 			<li>
-				<a class="imgWrapper" href="{% if project.url %}{{project.url}}{% else %}/post/{{project.slug}}{% endif %}">
+				<a class="imgWrapper" href="{% if project.url %}{{project.url}}{% else %}/post/{{project.slug}}/{% endif %}">
 					<img src="/static/upload/{{ project.title_card }}"/>
 					<h3>
 						{{ project.title }}
