@@ -1,1 +1,14 @@
 RewriteEngine off
+
+# 1 WEEK
+<filesMatch "\.(jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=604800, public"
+</filesMatch>
+# 1 DAY
+<filesMatch "\.(xml|txt|css|js)$">
+Header set Cache-Control "max-age=86400, proxy-revalidate"
+</filesMatch>
+# 2 MIN
+<filesMatch "\.(html|htm|php)$">
+Header set Cache-Control "max-age=120, private, proxy-revalidate"
+</filesMatch>
