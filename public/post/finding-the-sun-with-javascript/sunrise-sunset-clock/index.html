@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <!-- Sun Clock 2010-11-26 sun-clock -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=900; user-scalable=yes" />
+        <title>Sun Clock</title>
+        <script language="javascript" type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAArwjBsqpQBqZf_Vw6Z0iVuRS4-pfS7z3-gHFHXWOwWueP17_RrhRd1nA-JiOxps0nujxsBhzpyuTK3w">
+        </script>
+        <script language="javascript" type="text/javascript">
+            google.load("webfont", "1");
+            google.setOnLoadCallback(function(){
+                WebFont.load({
+                    google: {
+                        families: ['Vollkorn', 'Cardo']
+                    }
+                });
+            });
+        </script>
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+                font-weight: normal;
+            }
+            
+            body {
+                font-family: Arial, Tahoma, "Lucida Sans", "Lucida Sans Unicode", Tahoma, Helvetica, Verdana, "Gill Sans MT", Arial, sans-serif;
+            }
+            
+            h1, h2, h3, h4, h5, h6, h7 {
+                font-size: 1em;
+                font-weight: normal;
+            }
+            
+            code {
+                white-space: pre;
+            }
+            
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+            
+            p {
+                line-height: 150%;
+            }
+            
+            img {
+                border: none;
+            }
+            
+            li {
+                list-style: none;
+            }
+            
+            /*
+             oztu.org Posts Style Sheet
+             November 2010
+             */
+            body {
+                min-width: 900px;
+            }
+            
+            .base > div {
+                margin: 0 auto;
+                width: 900px;
+            }
+            
+            #Header {
+                height: 35px;
+                text-align: center;
+                border-bottom: 1px solid #ccc;
+                background-color: #efefef;
+            }
+            
+            #Header > a {
+                margin: 0 auto;
+                display: block;
+                color: black;
+                font-size: 1.25em;
+                letter-spacing: 2px;
+                font-family: 'Vollkorn', Helvetica, "Lucida Sans", Verdana, "Gill Sans MT", Arial, sans-serif;
+                padding-top: 6px;
+            }
+                        
+            #Content > div {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            div.box {
+                width: 430px;
+                background-color: #ccc;
+                height: 258px;
+                overflow: hidden;
+                float: left;
+                margin: 10px;
+            }
+            
+            div.box > * {
+                padding: 10px;
+            }
+            
+            div.box > h2 {
+                font-size: 26px;
+                opacity: .6;
+                filter: alpha(opacity = 60);
+                background-color: black;
+                color: white;
+            }
+            
+            h1 {
+                font-size: 30px;
+            }
+            
+            p {
+                margin: 10px 0px;
+            }
+            
+            li {
+                list-style-type: disc;
+                list-style-position: outside;
+                margin-left: 20px;
+            }
+            
+        </style>
+        <script type="text/javascript" src="sunny_minified.js">
+        </script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false">
+        </script>
+        <script type="text/javascript">
+            
+            google.load("dojo", "1.5");
+            
+            google.setOnLoadCallback(initialize);
+            
+            var geocoder;
+            
+            var time_field;
+            
+            var Current = {};
+            
+            
+            
+            function createCookie(name, value, days){
+            
+                if (days) {
+                
+                    var date = new Date();
+                    
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    
+                    var expires = "; expires=" + date.toGMTString();
+                    
+                }
+                
+                else 
+                    var expires = "";
+                
+                document.cookie = name + "=" + value + expires + "; path=/";
+                
+            }
+            
+            
+            
+            function readCookie(name){
+            
+                var nameEQ = name + "=";
+                
+                var ca = document.cookie.split(';');
+                
+                for (var i = 0; i < ca.length; i++) {
+                
+                    var c = ca[i];
+                    
+                    while (c.charAt(0) == ' ') 
+                        c = c.substring(1, c.length);
+                    
+                    if (c.indexOf(nameEQ) == 0) 
+                        return c.substring(nameEQ.length, c.length);
+                    
+                }
+                
+                return null;
+                
+            }
+            
+            
+            
+            function eraseCookie(name){
+            
+                createCookie(name, "", -1);
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            function initialize(){
+            
+                dojo.connect(dojo.byId("location"), "onclick", newLocation);
+                
+                time_field = dojo.byId("time");
+                
+                
+                
+                Current.place = readCookie('place') || "San Francisco";
+                
+                Current.latitude = parseFloat(readCookie('latitude')) || 47.6;
+                
+                Current.longitude = parseFloat(readCookie('longitude')) || -122.32;
+                
+                reset();
+                
+                
+                
+                geocoder = new google.maps.Geocoder();
+                
+            }
+            
+            
+            
+            function newLocation(){
+            
+                var new_place = prompt("New Location:", Current.place);
+                
+                if (!new_place) 
+                    return;
+                
+                
+                
+                geocoder.geocode({
+                    'address': new_place
+                }, function(results, status){
+                
+                    if (status == google.maps.GeocoderStatus.OK) {
+                    
+                        if (typeof results[0] == "undefined") {
+                            return;
+                        }
+                        
+                        Current.place = results[0].formatted_address ? results[0].formatted_address : new_place;
+                        
+                        Current.latitude = results[0].geometry.location.lat();
+                        
+                        Current.longitude = results[0].geometry.location.lng();
+                        
+                        createCookie('place', Current.place, 0);
+                        
+                        createCookie('latitude', Current.latitude, 0);
+                        
+                        createCookie('longitude', Current.longitude, 0);
+                        
+                        reset();
+                        
+                    }
+                    else {
+                    
+                        console.log("Geocode was not successful for the following reason: " + status);
+                        
+                    }
+                    
+                });
+                
+            }
+            
+            
+            
+            function reset(){
+            
+                var today = new Date();
+                
+                var time = {
+                    year: today.getFullYear(),
+                    month: today.getMonth() + 1,
+                    day: today.getDate()
+                };
+                
+                var space = {
+                    latitude: Current.latitude,
+                    longitude: Current.longitude
+                };
+                
+                dojo.byId("location").innerHTML = Current.place;
+                
+                Current.sunset = Sunny.sunset(space, time);
+                
+                var until_sunset = Current.sunset.getTime() - today.getTime();
+                
+                var future = new Date(today.getTime());
+                
+                while (until_sunset < 0) {
+                
+                    future.setTime(future.getTime() + 86400000);
+                    
+                    time = {
+                        year: future.getFullYear(),
+                        month: future.getMonth() + 1,
+                        day: future.getDate()
+                    };
+                    
+                    Current.sunset = Sunny.sunset(space, time);
+                    
+                    until_sunset = Current.sunset.getTime() - today.getTime();
+                    
+                }
+                
+                Current.sunrise = Sunny.sunrise(space, time);
+                
+                
+                
+                update();
+                
+            }
+            
+            
+            
+            function update(){
+            
+                setTimeout("update()", 3000);
+                
+                var now = new Date();
+                
+                var until_sunrise = Current.sunrise.getTime() - now.getTime();
+                
+                var until_sunset = Current.sunset.getTime() - now.getTime();
+                
+                
+                
+                if (until_sunrise > 0 && until_sunrise < until_sunset) {
+                
+                    minutes = until_sunrise / 1000 / 60;
+                    
+                    minute = minutes % 60;
+                    
+                    hour = (minutes - minute) / 60
+                    
+                    minute = Math.floor(minute);
+                    
+                    if (minute < 10) 
+                        minute = "0" + minute;
+                    
+                    time_field.innerHTML = hour + ":" + minute + " until day";
+                    
+                    time_field.title = "Sunrise is " + Current.sunrise;
+                    
+                }
+                else 
+                    if (until_sunset > 0) {
+                    
+                        minutes = until_sunset / 1000 / 60;
+                        
+                        minute = minutes % 60;
+                        
+                        hour = (minutes - minute) / 60;
+                        
+                        minute = Math.floor(minute);
+                        
+                        if (minute < 10) 
+                            minute = "0" + minute;
+                        
+                        time_field.innerHTML = hour + ":" + minute + " until night";
+                        
+                        time_field.title = "Sunset is " + Current.sunset;
+                        
+                    }
+                    else {
+                    
+                        reset();
+                        
+                    }
+                
+                
+                
+            }
+            
+            
+            
+        </script>
+        <style type="text/css">
+            
+            #location {
+                border-bottom: 1px solid gray;
+                cursor: pointer;
+            }
+            
+            #Content {
+                font-family: Calibri, 'Droid Sans', Helvetica, 'Lucida Sans', Verdana, 'Gill Sans MT', Arial, sans-serif;
+            }
+            
+            #clock {
+                text-align: center;
+                font-size: 40px;
+                margin-top: 70px;
+                height: 2em;
+                color: gray;
+            }
+            
+            #time {
+                color: black;
+            }
+            
+            #description {
+                color: gray;
+                font-style: italic;
+                width: 450px;
+                margin: 30px auto;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="Content" class="base">
+            <div>
+                <div id="clock">
+                    <span id="time"></span>
+                    in <span id="location"></span>.
+                </div>
+                <div id="description">
+                    This 'clock' shows you how much time is left until the next sunrise or sunset. Click on the underlined text to change the location. <a href="../">Click here</a>
+                    for more information on how this information is calculated.
+                </div>
+            </div>
+        </div>
+        <script src="../../../script/post_inject.js">
+        </script>
+    </body>
+</html>
