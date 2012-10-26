@@ -1,1 +1,2 @@
 RewriteEngine off
+DirectoryIndex home-page/index.html

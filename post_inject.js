@@ -1,3 +1,5 @@
+// This file is (or should be) injected to all posts
+
 var _gaq = _gaq || [];
 _gaq.push( [ '_setAccount', 'UA-4017245-5' ]);
 _gaq.push( [ '_setDomainName', '.oztu.org' ]);
