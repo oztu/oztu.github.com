@@ -13,7 +13,7 @@
 
 
   		#HeaderWrapper{ background-color:#CC333F; }
-  		#Header{margin:0 auto; width:900px; color:white; height:70px;font-size: 28px; font-family: 'Sanchez', sans-serif; line-height:70px;}
+  		#Header{margin:0 auto; width:910px; color:white; height:70px;font-size: 28px; font-family: 'Sanchez', sans-serif; line-height:70px;}
 
   		#Branding{float:left; padding:0px 30px; height:100%; text-align:center; font-size:30px; background-color:#EB6841; text-shadow:0px 1px 0px #757575;}
 
@@ -22,15 +22,16 @@
 
       #ImageRibbonWrapper{}
       #ImageRibbon{
-        margin:0 auto;
         white-space:nowrap;
         overflow:hidden;
-        height:400px;
+        height:350px;
+        margin-left:-25px;
       }
 
       #ImageRibbon img{
-        border-right:5px solid #EDC951;
-         
+        border-right:2px solid #EDC951;
+        height:350px;
+        width:350px;
       }
 
       #ContactWrapper{
@@ -41,7 +42,7 @@
 
       #Contact{
         margin:0 auto;
-        width:900px;
+        width:910px;
         
       }
 
@@ -56,7 +57,7 @@
 
       #About{
         margin:0 auto;
-        width:840px;
+        width:850px;
         padding:0px 30px;
         padding-bottom:30px;
         color:white;
@@ -72,7 +73,39 @@
         text-shadow:0px 1px 0px #333;
       }
       p{color:#eee;}
+      p + p{margin-top:10px;}
 
+      .post{
+        position:relative;
+        display:inline-block;
+        height:236px;
+        cursor:pointer;
+      }
+
+      .post span{
+        position:absolute;
+        bottom:0px;
+        left:0px;
+        width:100%;
+        display:block;
+        text-align:center;
+        padding:5px 0px;
+        color:#EDC951;
+        font-size:14px;
+      }
+
+      .post span.bg{
+        background-color:black;
+        opacity:.8;
+        -webkit-transition:all .15s;
+        -moz-transition:all .15s;
+        -ms-transition:all .15s;
+        transition:all .15s;
+      }
+
+      .post:hover span.bg{
+        opacity:1;
+      }
   </style>
 </head>
 <body>
@@ -89,7 +122,35 @@
   <div id="AboutWrapper">
     <div id="About">
       <h2>I'm a software engineer in California.</h2>
-      <p>I love math and I love creating. Computer science allows me to do both, so I study and practice it. I'm experienced with building large-scale websites and rich web applications. I currently work with <a href="http://www.turn.com">Turn</a> in Silicon Valley. I graduated from the University of Washington.</p>
+      <p>I love math and I love creating. Computer science allows me to do both, so I study and practice it. I've studied at the University of Washington and work with <a href="http://www.turn.com">Turn</a> in Silicon Valley. I'm experienced with building large-scale websites and rich web applications.</p>
+
+      <p>Some other personal things I'm willing to disclose to you, anonymous person, is that I particularly enjoy wandering through nature, and wondering about philosophical questions.</p>
+      <h2>Some things I did recently</h2>
+      <a class="post" href="post/finding-the-sun-with-javascript/sunrise-sunset-clock/">
+        <img src="post/finding-the-sun-with-javascript/find-the-sun.jpg" />
+        <span class="bg">&nbsp;</span>
+        <span>Sun Clock</span>
+      </a>
+      <a class="post" href="post/my-2010-trip-to-europe/">
+        <img src="post/my-2010-trip-to-europe/europe-trip.jpg" />
+        <span class="bg">&nbsp;</span>
+        <span>Trip to Europe</span>
+      </a>
+      <a class="post" href="my-work/t-mobile-prepaid-site/">
+        <img src="my-work/t-mobile-prepaid-site/tmo-prepaid-work.jpg"/>
+        <span class="bg">&nbsp;</span>
+        <span>T-Mobile Prepaid</span>
+      </a>
+      <a class="post" href="my-work/avaya-support-admin-console/">
+        <img src="my-work/avaya-support-admin-console/avaya-work.jpg"/>
+        <span class="bg">&nbsp;</span>
+        <span>Avaya Support</span>
+      </a>
+      <a class="post" href="my-work/">
+        <img src="my-work/t-mobile-testdrive-app/tmo-testdrive.jpg"/>
+        <span class="bg">&nbsp;</span>
+        <span>My Portfolio</span>
+      </a>
     </div>
   </div>
   <div id="ContactWrapper">
