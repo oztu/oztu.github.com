@@ -28,6 +28,9 @@ _gaq.push( [ '_trackPageview' ]);
 	}
 	
 
-	var fragment = create('<h1 style="line-height:100%; font-size:100%; text-align:center; padding:0px; margin:0px; background-color:white; background-color:#eee; box-shadow:0px 0px 15px 0px #333; border-bottom:1px solid #ddd; margin-bottom:15px;"><a style="text-shadow:0 -1px 1px #AAA,0px 1px 2px #EEE; display:block; padding:8px; color:black; font-weight:normal; font-size:26px; font-family:Helvetica,Arial; line-height:100%; text-decoration:none;" href="http://oztu.org/">Ozan Turgut\'s Website</a></h1>');
+	var fragment = create('<link href=\'http://fonts.googleapis.com/css?family=Sanchez\' rel=\'stylesheet\' type=\'text/css\'><div style="background-color:#CC333F;"><h1 style="margin:0 auto; width:900px; color:white; height:70px;font-size: 28px; font-family: \'Sanchez\', sans-serif; line-height:70px;"><a href="http://oztu.org/" style="display:block; float:left; padding:0px 30px; height:100%; text-align:center; font-size:30px; background-color:#EB6841; text-shadow:0px 1px 0px #757575; color:white;">Ozan Turgut</a></h1></div>');
 	document.body.insertBefore(fragment, document.body.childNodes[0]);	
 }());
+
+
+ 
