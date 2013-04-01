@@ -1,0 +1,50 @@
+.site-header{
+	h1{
+		width:450px;
+		margin:0 auto;
+	}
+}
+
+.about-me{
+	width:450px;
+	margin:0 auto;
+
+	p.lead{
+		font-size:24px;
+	}
+
+	p{
+		font-size:16px;
+	}
+}
+
+.pictures-of-me{
+	white-space:nowrap;
+	overflow:hidden;
+	height:350px;
+	img{
+		height:350px;
+		width:350px;
+
+	}
+}
+
+.my-work{
+	figure{
+		position:relative;
+		display:inline-block;
+
+		figcaption{
+			position:absolute;
+			bottom:0px;
+			left:0px;
+			width:100%;
+			background-color:black;
+			color:white;
+			opacity:0.8;
+			text-align:center;
+			line-height:30px;
+			font-size:16px;
+		}
+	}
+}

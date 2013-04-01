@@ -1,2 +1,0 @@
-ozanturgut.github.com
-=====================

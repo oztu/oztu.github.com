@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ozan Turgut's Website</title>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.7.3/build/cssreset/cssreset-min.css">
+  <link href='http://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+  <style>
+  		html,body{height:100%;  
+        font-family: 'PT Sans', sans-serif; background-color:#6A4A3C;
+  }
+
+
+  		#HeaderWrapper{ background-color:#CC333F; }
+  		#Header{margin:0 auto; width:850px; color:white; height:70px;font-size: 28px; font-family: 'Sanchez', sans-serif; line-height:70px;}
+
+  		#Branding{
+        cursor:default;
+        float:left; padding:0px 30px; height:100%; text-align:center; font-size:30px; background-color:#EB6841;}
+
+      #ImageRibbonWrapper{
+        overflow:hidden;
+      }
+      #ImageRibbon{
+        white-space:nowrap;
+        overflow:hidden;
+        height:350px;
+        margin-left:-25px;
+      }
+
+      #ImageRibbon img{
+        border-right:2px solid #EDC951;
+        height:350px;
+        width:350px;
+      }
+
+      #ContactWrapper{
+        background-color:#00A0B0;
+        color:white;
+        font-size:28px;
+      }
+
+      #Contact{
+        margin:0 auto;
+        width:910px;
+        
+      }
+
+      #Contact p{
+        padding:15px 30px;
+      }
+
+      a{
+        text-decoration: none;
+        color:#EDC951;
+      }
+
+      #About{
+        margin:0 auto;
+        width:850px;
+        padding:0px 30px;
+        padding-bottom:30px;
+        color:white;
+        line-height:140%;
+        font-size:18px;
+      }
+
+      h2{
+        font-size:28px;
+        color:#EDC951;
+        line-height:66px;
+        text-align:left;
+      }
+      p{color:#eee;}
+      p + p{margin-top:10px;}
+
+      .post{
+        position:relative;
+        display:inline-block;
+        height:236px;
+        cursor:pointer;
+      }
+
+      .post span{
+        position:absolute;
+        bottom:0px;
+        left:0px;
+        width:100%;
+        display:block;
+        text-align:center;
+        padding:5px 0px;
+        color:#EDC951;
+        font-size:14px;
+      }
+
+      .post span.bg{
+        background-color:black;
+        opacity:.8;
+        -webkit-transition:all .15s;
+        -moz-transition:all .15s;
+        -ms-transition:all .15s;
+        transition:all .15s;
+      }
+
+      .post:hover span.bg{
+        opacity:1;
+      }
+  </style>
+</head>
+<body>
+  <!-- v1 -->
+  <div id="HeaderWrapper">
+    <h1 id="Header">
+      <div id="Branding">Ozan Turgut</div>
+    </h1>
+  </div>
+	<div id="ImageRibbonWrapper">
+    <div id="ImageRibbon">
+      <img src="home-page/me2.jpg" /><img src="home-page/friends.jpg" /><img src="home-page/couch-surfing.jpg" /><img src="home-page/calm.jpg" /><img src="home-page/daft-code.jpg" /><img src="home-page/artsy.jpg" /><img src="home-page/motivational-poster-candidate.jpg" /><img src="home-page/weird.jpg" /></div></div></div>
+
+  <div id="AboutWrapper">
+    <div id="About">
+      <h2>I'm a software engineer in Silicon Valley.</h2>
+      <p>I love math and I love building things. Computer science allows me to do both, so I study and practice it. I'm good at building human-facing web applications, I'm currently building them at <a href="http://www.turn.com/platform">Turn</a> to make advertising better.</p>
+
+      <p style="margin-bottom:10px;">Some things I've worked on:</p>
+
+      <a class="post" href="http://thrilljs.com">
+        <img src="post/thrill/cover.png"/>
+        <span class="bg">&nbsp;</span>
+        <span>Thrill.js</span>
+      </a>
+      <a class="post" href="http://queenjs.com">
+        <img src="post/queen/queen.png"/>
+        <span class="bg">&nbsp;</span>
+        <span>Queen.js</span>
+      </a>      
+      <a class="post" href="my-work/t-mobile-prepaid-site/">
+        <img src="my-work/t-mobile-prepaid-site/tmo-prepaid-work.jpg"/>
+        <span class="bg">&nbsp;</span>
+        <span>T-Mobile Prepaid</span>
+      </a>
+      <a class="post" href="post/my-2010-trip-to-europe/">
+        <img src="post/my-2010-trip-to-europe/europe-trip.jpg" />
+        <span class="bg">&nbsp;</span>
+        <span>Trip to Europe</span>
+      </a>
+      <a class="post" href="my-work/">
+        <img src="my-work/t-mobile-testdrive-app/tmo-testdrive.jpg"/>
+        <span class="bg">&nbsp;</span>
+        <span>My Portfolio</span>
+      </a>
+    </div>
+  </div>
+  <div id="ContactWrapper">
+    <div id="Contact">
+      <p>
+      Find me at <a href="http://www.linkedin.com/in/ozanturgut">LinkedIn</a>, <a href="http://www.facebook.com/ozanturgut">Facebook</a>, <a href="https://github.com/ozanturgut">GitHub</a> or <a href="mailto:ozanturgut@gmail.com">ozanturgut@gmail.com</a>.
+      </p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push( [ '_setAccount', 'UA-4017245-5' ]);
+    _gaq.push( [ '_setDomainName', '.oztu.org' ]);
+    _gaq.push( [ '_trackPageview' ]);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+          : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
