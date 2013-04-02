@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         tasks: 'concat sass reload'
       },
       statics: {
-        files: ['./index.html', './partial/**/*'],
+        files: ['./index.html', './template/**/*'],
         tasks: 'reload'
       }
     },

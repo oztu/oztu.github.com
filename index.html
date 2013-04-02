@@ -19,12 +19,13 @@
 
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   </head>
-  <body>
+  <body ng-controller="pages">
     <header class="site-header">
-      <h1>Ozan Turgut</h1>
+      <a href="/#/"><h1>Ozan Turgut</h1></a>
+      <h2 class="{{pageTitle && 'visible' || ''}}">{{pageTitle}}</h2>
     </header>
 
-    <section class="pictures-of-me">
+    <section class="pictures-of-me {{pageTitle && 'minimized' || ''}}">
       <img 
         ng-repeat="src in ['me2.jpg','friends.jpg','couch-surfing.jpg','calm.jpg','daft-code.jpg','artsy.jpg','motivational-poster-candidate.jpg','weird.jpg']" 
         ng-src="resource/image/me/{{src}}" 
@@ -32,38 +33,30 @@
     </section>
 
     <section class="about-me">
-      <p class="lead">I'm a software engineer in Silicon Valley.</p>
-      <p>
-        I love math and I love building things. Computer science allows 
-        me to do both, so I study and practice it. 
-      </p>
-      <p>
-        I'm good at building web applications, I'm currently building them 
-        at <a href="http://www.turn.com/platform">Turn</a> to make advertising 
-        better.
-      </p>
-      <p>
-        Find me at <a href="http://www.linkedin.com/in/ozanturgut">LinkedIn</a>, 
-        <a href="http://www.facebook.com/ozanturgut">Facebook</a>, 
-        <a href="https://github.com/ozanturgut">GitHub</a> or 
-        <a href="mailto:ozanturgut@gmail.com">ozanturgut@gmail.com</a>.
-      </p>
-    </section>
+      <section class="about-me-words">
+        <p class="lead">I'm a software engineer in Silicon Valley.</p>
+        <p>
+          I love math and I love building things. Computer science allows 
+          me to do both, so I study and practice it. 
+        </p>
+        <p>
+          I'm good at building web applications, I'm currently building them 
+          at <a href="http://www.turn.com/">Turn</a> to make advertising 
+          better.
+        </p>
+        <p>
+          Find me at <a href="http://www.linkedin.com/in/ozanturgut">LinkedIn</a>, 
+          <a href="http://www.facebook.com/ozanturgut">Facebook</a>, 
+          <a href="https://github.com/ozanturgut">GitHub</a> or 
+          <a href="mailto:ozanturgut@gmail.com">ozanturgut@gmail.com</a>.
+        </p>
+      </section>
 
-    <section ng-controller="myWork" class="my-work">
-      <figure ng-repeat="project in projects">
-        <img ng-src="{{project.img}}"/>
-        <figcaption>
-          {{project.caption}}
-        </figcaption>
-      </figure>
-    </section>
-
-    <section class="contact-me">
+      <ng-view></ng-view>
     </section>
 
     <script src="dist/script.js"></script>
-    <!--script type="text/javascript">
+    <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-4017245-5']);
       _gaq.push(['_trackPageview']);
@@ -73,7 +66,7 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    </script-->
+    </script>
 
     <!--[if !IE]><script>
     (function() {
