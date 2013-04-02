@@ -19,13 +19,13 @@
 
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   </head>
-  <body ng-controller="pages">
+  <body ng-controller="pages" class="{{pageTitle && 'page-view' || ''}}">
     <header class="site-header">
       <a href="/#/"><h1>Ozan Turgut</h1></a>
       <h2 class="{{pageTitle && 'visible' || ''}}">{{pageTitle}}</h2>
     </header>
 
-    <section class="pictures-of-me {{pageTitle && 'minimized' || ''}}">
+    <section class="pictures-of-me">
       <img 
         ng-repeat="src in ['me2.jpg','friends.jpg','couch-surfing.jpg','calm.jpg','daft-code.jpg','artsy.jpg','motivational-poster-candidate.jpg','weird.jpg']" 
         ng-src="resource/image/me/{{src}}" 
@@ -33,7 +33,7 @@
     </section>
 
     <section class="about-me">
-      <section class="about-me-words">
+      <section ng-click="goHome()" class="about-me-words">
         <p class="lead">I'm a software engineer in Silicon Valley.</p>
         <p>
           I love math and I love building things. Computer science allows 

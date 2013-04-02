@@ -22,8 +22,10 @@ body, html{
 	position:relative;
 	padding-left:500px;
 	height:70px;
+	-webkit-transition: all 0.2s;
 	h1{		
 		position:absolute;
+		-webkit-transition: all 0.2s;
 		top:0px;
 		left:0px;
 		height:70px;
@@ -36,7 +38,7 @@ body, html{
 		padding:0px 25px;
 	}
 	h2{
-		-webkit-transition:all 0.3s;
+		-webkit-transition:all 0.2s;
 		opacity:0;
 		margin:0px;
 		margin-left:20px;
@@ -50,19 +52,44 @@ body, html{
 	}
 }
 
+.page-view{
+	.pictures-of-me{
+		height:0px;
+	}
+
+	.site-header{
+		padding-left:300px;
+		h1{
+			width:250px;
+		}
+	}
+	
+	.about-me{
+		.about-me-words{
+			cursor:pointer;
+			width:250px;
+
+			p{
+				display:none;
+			}
+		}
+
+		ng-view{
+			margin-left:300px;
+		}
+	}
+}
+
 .pictures-of-me{
-	-webkit-transition:all 0.3s;
+	-webkit-transition:all 0.2s;
 	white-space:nowrap;
 	overflow:hidden;
 	height:350px;
 	background-color:#dac21a;
+
 	img{
 		height:350px;
 		width:350px;
-	}
-
-	&.minimized{
-		height:0px;
 	}
 }
 
@@ -72,10 +99,12 @@ ng-view > section{
 
 .about-me{
 	height:100%;
+	width:100%;
 	position:relative;
-	padding-left:500px;
-
+	-webkit-transition: all 0.2s;
+		
 	.about-me-words{
+		display:block;
 		background-color: #981c24;
 		color:white;
 		position:absolute;
@@ -83,6 +112,7 @@ ng-view > section{
 		left:0px;
 		height:100%;
 
+		-webkit-transition: all 0.2s;
 		width:450px;
 		padding:10px 25px;
 
@@ -95,8 +125,15 @@ ng-view > section{
 		}
 
 		p{
+			-webkit-transition: all 0.2s;
+			opacity:1;
 			font-size:16px;
 		}
+	}
+
+	ng-view{
+		display:block;
+		margin-left:500px;
 	}
 
 	.pages{
@@ -122,7 +159,7 @@ ng-view > section{
 			}
 
 			img{
-				-webkit-transition: all .2s;
+				-webkit-transition: all 0.2s;
 				width:150px;
 				height:150px;
 				border-radius:100px;
@@ -130,7 +167,7 @@ ng-view > section{
 			}
 
 			.caption{
-				-webkit-transition: all .2s;
+				-webkit-transition: all 0.2s;
 				width:150px;
 				color:#981c24;
 				text-align:center;
