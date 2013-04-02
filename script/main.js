@@ -12,6 +12,9 @@ app.config(['$routeProvider', function($routeProvider){
 	}).when('/collage.js', {
 		templateUrl: 'template/collage.js.htm',
 		title:"Collage.js"
+	}).when('/samelove.us', {
+		templateUrl: 'template/samelove.us.htm',
+		title:"Same Love"
 	}).when('/thrill.js', {
 		templateUrl: 'template/thrill.js.htm',
 		title:"Thrill.js"

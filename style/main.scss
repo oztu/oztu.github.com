@@ -107,6 +107,8 @@ ng-view > section{
 			display:inline-block;
 			margin:15px;
 			cursor:pointer;
+			height:190px;
+			vertical-align: middle;
 
 			&:hover{
 				text-decoration: none;
@@ -129,11 +131,16 @@ ng-view > section{
 
 			.caption{
 				-webkit-transition: all .2s;
-				width:100%;
+				width:150px;
 				color:#981c24;
 				text-align:center;
-				line-height:35px;
+				height:44px;
+				line-height:44px;
 				font-size:18px;
+
+				&.two-line{
+					line-height:22px;
+				}
 			}
 		}
 	}
