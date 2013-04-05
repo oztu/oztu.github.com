@@ -1,160 +1,27 @@
-<section>
-	<p class="lead">
-		I built this thing years ago, but it's been a very handy tool time and again.
-	</p>
-	<iframe 
-		seamless
-		style="width:700px;  height: 340px; background-color:white; border:5px solid #5096b8;"
-		src="pre-march-2013/post/finding-the-sun-with-javascript/sunrise-sunset-clock/index.html"
-	></iframe>
+<section class="top-banner" style="position:relative;">
+  <img style="width:2375px;" src="resource/image/my-work/space-banner.jpg" />
+
+<iframe 
+	frameBorder="0"
+	seamless
+	style="margin: 0 auto; width:700px;  height: 100px; position:absolute; top:40px; left:50%; margin-left:-350px;"
+	src="pre-march-2013/post/finding-the-sun-with-javascript/sunrise-sunset-clock/index.html"
+></iframe>
 
 </section>
+<section style="padding:20px; margin:0 auto; width:450px;">
+	<p class="lead">
+		When's the Next Sunrise/Sunset?
+	</p>
+	<p>
+        This "clock" shows you how much time is left until the next sunrise or sunset.
+        I built it years ago, but still find it handy. 
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript">
-(function(){
+        It just does math to come up with the information, courtesy of the <a href="http://www.esrl.noaa.gov/gmd/grad/solcalc/">solar calculator by NOAA</a>. 
+    </p>
+   
 
-	eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('6 3={};3.s=h(c,g,n){6 a=3.8(c);i 1f-(4.0*(n+3.L(3.1u(g,3.U(a)))))-3.x(a)};3.r=h(c,g,n){6 a=3.8(c);i 1f-(4.0*(n-3.L(3.1u(g,3.U(a)))))-3.x(a)};3.F=h(b,a){6 c=3.c(a.q,a.p,a.J);6 F=1n 1v(0);F.1z(a.q,a.p-1,a.J);6 s=3.s(c,b.g,b.n);s=3.s(c+s/Z.0,b.g,b.n);j(Y(s)){6 H=3.1w(c);j(((b.g>1d.4)&&(H>1p)&&(H<1S))||((b.g<-1d.4)&&((H<1Z)||(H>1R)))){Q(Y(s)){c--;F.R(F.O()-19);s=3.s(c,b.g,b.n)}}v{Q(Y(s)){c++;F.R(F.O()+19);s=3.s(c,b.g,b.n)}}}F.R(F.O()+(s*1y));i F};3.G=h(b,a){6 c=3.c(a.q,a.p,a.J);6 G=1n 1v(0);G.1z(a.q,a.p-1,a.J);6 r=3.r(c,b.g,b.n);r=3.r(c+r/Z.0,b.g,b.n);j(Y(r)){6 H=3.1w(c);j(((b.g>1d.4)&&(H>1p)&&(H<1S))||((b.g<-1d.4)&&((H<1Z)||(H>1R)))){Q(Y(r)){c++;G.R(G.O()+19);r=3.r(c,b.g,b.n)}}v{Q(Y(r)){c--;G.R(G.O()-19);r=3.r(c,b.g,b.n)}}}G.R(G.O()+(r*1y));i G};3.2X=h(b,a){6 1c=a.2W*10+a.31+a.35/10.0-a.33*10;j(a.2j)1c-=10;6 8=3.8(3.c(a.q,a.p,a.J)+1c/Z.0);6 1H=3.x(8);6 1a=3.U(8);6 1g=1H+4.0*b.n+1c;Q(1g>Z){1g-=Z}6 16=1g/4.0-15.0;j(16<-15){16+=V.0}6 2f=3.d(16);6 X=7.l(3.d(b.g))*7.l(3.d(1a))+7.u(3.d(b.g))*7.u(3.d(1a))*7.u(2f);j(X>1.0){X=1.0}v j(X<-1.0){X=-1.0}6 18=3.L(7.1r(X));6 1s=(7.u(3.d(b.g))*7.l(3.d(18)));j(7.1W(1s)>0.3d){W=((7.l(3.d(b.g))*7.u(3.d(18)))-7.l(3.d(1a)))/1s;j(7.1W(W)>1.0){j(W<0){W=-1.0}v{W=1.0}}6 I=15.0-3.L(7.1r(W));j(16>0.0){I=-I}}v{j(b.g>0.0){I=15.0}v{I=0.0}}j(I<0.0){I+=V.0}6 K=1l.0-18;j(K>2n.0){6 S=0.0}v{6 w=7.1e(3.d(K));j(K>5.0){6 S=2x.1/w-0.2y/ (w * w * w) + 0.2z /(w*w*w*w*w)}v j(K>-0.2u){6 S=2t.0+K*(-2p.2+K*(2o.4+K*(-12.1p+K*0.2r)))}v{6 S=-20.2w/w}S=S/2q.0}6 1M=18-S;i{\'I\':I,\'2v\':(1l-1M)}};3.11=h(b,a){6 11=1n 1v(0);11.1z(a.q,a.p-1,a.J);6 c=3.c(a.q,a.p,a.J);6 8=3.8(c-b.n/V);6 x=3.x(8);6 1P=1f.0-(b.n*4)-x;8=3.8(c+1P/Z.0);x=3.x(8);6 1I=1f-(b.n*4)-x;11.R(11.O()+(1I*1y));i 11};3.1w=h(c){6 z=7.t(c+0.5);6 f=(c+0.5)-z;j(z<2i){6 A=z}v{1x=7.t((z-2s.25)/2U.25);6 A=z+1+1x-7.t(1x/4)}6 B=A+1N;6 C=7.t((B-34.1)/1q.25);6 D=7.t(1q.25*C);6 E=7.t((B-D)/30.1m);6 J=B-D-7.t(30.1m*E)+f;6 p=(E<14)?E-1:E-13;6 q=(p>2)?C-27:C-2Y;j((q%4==0&&q%1C!=0)||q%2Z==0){k=1}v{k=2}i 7.t((37*p)/9)-k*7.t((p+9)/12)+J-30};3.2B=h(8){6 N=3.N(8);6 M=3.M(8);6 1L=(7.u(3.d(N))*7.l(3.d(M)));6 1K=(7.u(3.d(M)));i 3.L(7.3b(1L,1K))};3.1u=h(g,U){6 1k=3.d(g);6 1t=3.d(U);6 1Q=(7.u(3.d(1l.38))/(7.u(1k)*7.u(1t))-7.1e(1k)*7.1e(1t));i 7.1r(1Q)};3.U=h(8){6 N=3.N(8);6 M=3.M(8);6 1B=7.l(3.d(N))*7.l(3.d(M));i 3.L(7.39(1B))};3.x=h(8){6 1D=3.N(8);6 1h=3.1o(8);6 e=3.24(8);6 m=3.1A(8);6 y=7.1e(3.d(1D)/2.0);y*=y;6 1G=7.l(2.0*3.d(1h));6 17=7.l(3.d(m));6 1F=7.u(2.0*3.d(1h));6 1E=7.l(4.0*3.d(1h));6 1i=7.l(2.0*3.d(m));6 1J=y*1G-2.0*e*17+4.0*e*y*17*1F-0.5*y*y*1E-1.25*e*e*1i;i 3.L(1J)*4.0};3.1o=h(8){6 T=2I.2J+8*(2G.2F+8*(0.2C));Q(T>V.0){T-=V.0}Q(T<0.0){T+=V.0}i T};3.24=h(8){i 0.2K-8*(0.2L+0.2R*8)};3.N=h(8){6 1b=3.1Y(8);6 1j=1U.2d-2e.2a*8;6 e=1b+0.2S*7.u(3.d(1j));i e};3.1Y=h(8){6 29=21.2T-8*(2Q.2P+8*(0.2M-8*(0.2N)));6 1b=23.0+(26.0+(29/10.0))/10.0;i 1b};3.M=h(8){6 o=3.1V(8);6 1j=1U.2d-2e.2a*8;6 1T=o-0.32-0.2O*7.l(3.d(1j));i 1T};3.1V=h(8){i 3.1o(8)+3.2c(8)};3.2c=h(8){6 m=3.1A(8);6 P=3.d(m);6 17=7.l(P);6 1i=7.l(P+P);6 1O=7.l(P+P+P);6 C=17*(1.2D-8*(0.2V+0.36*8))+1i*(0.3a-0.3c*8)+1O*0.2h;i C};3.1A=h(8){i 2g.2k+8*(2l.2m-0.2A*8)};3.c=h(q,p,2b){j(p<=2){q-=1;p+=12}6 A=7.t(q/1C);i 7.t(1q.25*(q+27))+7.t(30.1m*(p+1))+2b+(2-A+7.t(A/4))-1N.5};3.8=h(c){i(c-2H.0)/2E.0};3.L=h(1X){i(15.0*1X/7.22)};3.d=h(28){i(7.22*28/15.0)};',62,200,'|||Sunny|||var|Math|julian_century||time|space|julian_date|degree_TO_radian|||latitude|function|return|if||sin||longitude||month|year|sunsetUTC|sunriseUTC|floor|cos|else|te|equation_of_time||||||||sunrise|sunset|day_of_year|azimuth|day|exoatmElevation|radian_TO_degree|apparent_longitude_of_sun|obliquity_correction|getTime|mrad|while|setTime|refractionCorrection|L0|declination_of_sun|360|azRad|csz|isNaN|1440|60|solar_noon||||180|hourAngle|sinm|zenith|86400000|theta|e0|time_difference|66|tan|720|trueSolarTime|l0|sin2m|omega|latRad|90|6001|new|geometric_mean_longitude_of_sun|79|365|acos|azDenom|sdRad|hour_angle_of_sunrise|Date|julian_date_TO_day_of_year|alpha|60000|setUTCFullYear|geometric_mean_anomaly_of_sun|sint|100|epsilon|sin4l0|cos2l0|sin2l0|eqTime|local_solar_noon|Etime|tanadenom|tananum|solarZen|1524|sin3m|solar_noon_offset|HAarg|263|267|lambda|125|true_longitude_of_sun|abs|radians|mean_obliquity_of_ecliptic|83|||PI||orbital_eccentricity_of_earth|||4716|degrees|seconds|136|date|center_of_sun|04|1934|haRad|357|000289|2299161|dst|52911|35999|05029|85|103|518|3600|711|1867216|1735|575|elevation|774|58|07|000086|0001537|right_ascention_of_sun|0003032|914602|36525|76983|36000|2451545|280|46646|016708634|000042037|00059|001813|00478|8150|46|0000001267|00256|448|36524|004817|hour|azimuth_and_elevation|4715|400||minute|00569|zone|122|second|000014|275|833|asin|019993|atan2|000101|001'.split('|')));
-
-	google.load("dojo", "1.5");
-	google.setOnLoadCallback(initialize);
-	var geocoder;
-	var time_field;
-	var Current = {};
-
-	function createCookie(name, value, days){
-	    if (days) {
-	        var date = new Date();
-	        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-	        var expires = "; expires=" + date.toGMTString();
-	    } else var expires = "";
-	    document.cookie = name + "=" + value + expires + "; path=/";
-	}
-
-	function readCookie(name){
-	    var nameEQ = name + "=";
-	    var ca = document.cookie.split(';');
-	    for (var i = 0; i < ca.length; i++) {
-	        var c = ca[i];
-	        while (c.charAt(0) == ' ') 
-	            c = c.substring(1, c.length);
-	        
-	        if (c.indexOf(nameEQ) == 0) 
-	            return c.substring(nameEQ.length, c.length);
-	    }
-
-	    return null;
-	}
-
-	function eraseCookie(name){
-	    createCookie(name, "", -1);
-	}
-
-	function initialize(){
-	    dojo.connect(dojo.byId("location"), "onclick", newLocation);
-	    
-	    time_field = dojo.byId("time");
-
-	    Current.place = readCookie('place') || "San Francisco, CA";
-	    Current.latitude = parseFloat(readCookie('latitude')) || 37.77;
-	    Current.longitude = parseFloat(readCookie('longitude')) || -122.4183;
-	    console.log(Current);
-	    reset();
-	    geocoder = new google.maps.Geocoder();
-	}
-
-	function newLocation(){
-	    var new_place = prompt("New Location:", Current.place);
-	    
-	    if (!new_place) return;
-	    
-	    geocoder.geocode({
-	        'address': new_place
-	    }, function(results, status){
-	        if (status == google.maps.GeocoderStatus.OK) {
-	            if (typeof results[0] == "undefined") {
-	                return;
-	            }
-	            
-	            Current.place = results[0].formatted_address ? results[0].formatted_address : new_place;
-	            Current.latitude = results[0].geometry.location.lat();
-	            Current.longitude = results[0].geometry.location.lng();
-	            createCookie('place', Current.place, 0);
-	            createCookie('latitude', Current.latitude, 0);
-	            createCookie('longitude', Current.longitude, 0);
-	            reset();
-	        } else {
-	            console.log("Geocode was not successful for the following reason: " + status);
-	        }
-	    });
-	}
-
-	function reset(){
-	    var today = new Date();
-	    
-	    var time = {
-	        year: today.getFullYear(),
-	        month: today.getMonth() + 1,
-	        day: today.getDate()
-	    };
-	    
-	    var space = {
-	        latitude: Current.latitude,
-	        longitude: Current.longitude
-	    };
-	    
-	    dojo.byId("location").innerHTML = Current.place;
-	    Current.sunset = Sunny.sunset(space, time);
-	    var until_sunset = Current.sunset.getTime() - today.getTime();
-	    var future = new Date(today.getTime());
-	    
-	    while (until_sunset < 0) {
-	        future.setTime(future.getTime() + 86400000);
-	        
-	        time = {
-	            year: future.getFullYear(),
-	            month: future.getMonth() + 1,
-	            day: future.getDate()
-	        };
-	        
-	        Current.sunset = Sunny.sunset(space, time);
-	        until_sunset = Current.sunset.getTime() - today.getTime();
-	    }
-	    
-	    Current.sunrise = Sunny.sunrise(space, time);
-	    update();
-	}
-
-	function update(){
-	    setTimeout(update, 3000);
-	    var now = new Date();
-	    var until_sunrise = Current.sunrise.getTime() - now.getTime();
-	    var until_sunset = Current.sunset.getTime() - now.getTime();
-	    
-	    if (until_sunrise > 0 && until_sunrise < until_sunset) {
-	        minutes = until_sunrise / 1000 / 60;
-	        minute = minutes % 60;
-	        hour = (minutes - minute) / 60
-	        minute = Math.floor(minute);
-	        
-	        if (minute < 10) 
-	            minute = "0" + minute;
-	        
-	        time_field.innerHTML = hour + ":" + minute + " until day";
-	        time_field.title = "Sunrise is " + Current.sunrise;
-	    } else if (until_sunset > 0) {
-	        minutes = until_sunset / 1000 / 60;
-	        minute = minutes % 60;
-	        hour = (minutes - minute) / 60;
-	        minute = Math.floor(minute);
-	        
-	        if (minute < 10) minute = "0" + minute;
-
-	        time_field.innerHTML = hour + ":" + minute + " until night";
-	        time_field.title = "Sunset is " + Current.sunset;
-	    } else {
-	        reset();
-	    }
-	}
-}());
-</script>
+    <p>
+        Click on the underlined text to change the location.
+    </p>
+</section>

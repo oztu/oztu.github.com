@@ -1,64 +1,25 @@
-<section class="pages">
-  <a href="#/collage.js">
-    <img ng-src="resource/image/my-work/collage.png"/>
-    <div class="caption two-line">
-      Futuristic Collages
-    </div>
-  </a>
+<section class="top-banner">
+  <img 
+    ng-repeat="src in ['me2.jpg','friends.jpg','couch-surfing.jpg','calm.jpg','daft-code.jpg','artsy.jpg','motivational-poster-candidate.jpg','weird.jpg']" 
+    ng-src="resource/image/me/{{src}}" 
+    style="height:350px; width:350px;"
+  />
+</section>
 
-  <a href="#/thrill.js">
-    <img ng-src="resource/image/my-work/thrill.png"/>
-    <div class="caption two-line">
-      Distributed Testing
-    </div>
-  </a>
-
-  <a href="#/queen.js">
-    <img ng-src="resource/image/my-work/Queen.png"/>
-    <div class="caption two-line">
-      Distributed Computing (?)
-    </div>
-  </a>
-  
-  <a href="#/samelove.us">
-    <img ng-src="resource/image/my-work/samelove.png"/>
-    <div class="caption">
-      Coding for Good
-    </div>
-  </a>
-
-  <a href="#/t-mobile-prepaid">
-    <img ng-src="resource/image/my-work/tmo-prepaid-work.jpg"/>
-    <div class="caption">
-      Big Website
-    </div>
-  </a>
-
-  <a href="#/t-mobile-testdrive">
-    <img ng-src="resource/image/my-work/tmo-testdrive.jpg"/>
-    <div class="caption">
-      Fancy Web App
-    </div>
-  </a>
-
-  <a href="#/flextag">
-    <img ng-src="resource/image/my-work/flextag.png"/>
-    <div class="caption two-line">
-      Data Collection Tool
-    </div>
-  </a>
-
-  <a href="#/sun-clock">
-    <img ng-src="resource/image/my-work/find-the-sun.jpg"/>
-    <div class="caption">
-      Sun Clock
-    </div>
-  </a>
-
-  <a href="#/europe-trip-2010">
-    <img ng-src="resource/image/my-work/europe-trip.jpg"/>
-    <div class="caption">
-      Trip Planning
-    </div>
-  </a>
+<section class="about-me" style="font-size:16px; margin:0 auto; width:450px; padding:20px 25px; line-height:22px">
+    <p style="font-size:22px; margin-bottom:12px;">I'm a software engineer in Silicon Valley.</p>
+    <p>
+      I love math and I love building things. Computer science allows 
+      me to do both, so I study and practice it. 
+    </p>
+    <p>
+      I'm good at building web applications, I'm currently building them 
+      at <a href="http://www.turn.com/">Turn</a> to make advertising 
+      better.
+    </p>
+    <p>
+      Find me at <a href="http://www.linkedin.com/in/ozanturgut">LinkedIn</a>, 
+      <a href="http://www.facebook.com/ozanturgut">Facebook</a>, 
+      <a href="https://github.com/ozanturgut">GitHub</a> or 
+      <a href="mailto:ozanturgut@gmail.com">ozanturgut@gmail.com</a>.
 </section>

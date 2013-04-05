@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     },
     concat:{
       styles: {
-        src: ['./resource/bootstrap.min.css', './resource/bootstrap-responsive.min.css', './style/**/*.scss'],
+        src: ['./resource/bootstrap.min.css', './style/**/*.scss'],
         dest: './build/style.scss'
       },
     },

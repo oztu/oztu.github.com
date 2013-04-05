@@ -1,13 +1,10 @@
-var controller = module.exports = function($scope, $route, $rootScope, $window){
-	$scope.pageTitle = "";
-	$scope.goHome = function(){
-		if(!$scope.pageTitle) return;
-		$window.location.hash = "/"
-	};
+var controller = module.exports = function($scope, $location, $rootScope, $window){
 	$rootScope.$on('$routeChangeSuccess', function(e, newRoute, oldRoute){
-		if(newRoute && newRoute.$route) $scope.pageTitle = newRoute.$route.title;
-		else $scope.pageTitle = ""
+		if($location.path() !== "/navigation"){
+			$scope.navExpanded = false;	
+		} else {
+			$scope.navExpanded = true;	
+		}
 	});
-
 };
-controller.$inject = ['$scope', '$route', '$rootScope', '$window'];
+controller.$inject = ['$scope', '$location', '$rootScope', '$window'];

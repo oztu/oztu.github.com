@@ -19,41 +19,87 @@
 
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   </head>
-  <body ng-controller="pages" class="{{pageTitle && 'page-view' || ''}}">
-    <header class="site-header">
-      <a href="/#/"><h1>Ozan Turgut</h1></a>
-      <h2 class="{{pageTitle && 'visible' || ''}}">{{pageTitle}}</h2>
+  <body ng-controller="pages" class=" {{navExpanded && 'nav-expanded' || ''}}">
+    <header class="nav" ng-controller="navigation">
+      <a href="#/" ng-class="getClass('')">
+        <img ng-src="resource/image/nav/about-me.png"/>
+        <div class="caption">
+          Ozan Turgut
+        </div>
+      </a>      
+      <a href="#/collage.js" ng-class="getClass('collage.js')">
+        <img ng-src="resource/image/nav/collage.png"/>
+        <div class="caption two-line">
+          Futuristic Collages
+        </div>
+      </a>
+
+      <a href="#/thrill.js" ng-class="getClass('thrill.js')">
+        <img ng-src="resource/image/nav/thrill.png"/>
+        <div class="caption two-line">
+          Distributed Testing
+        </div>
+      </a>
+
+      <a href="#/queen.js" ng-class="getClass('queen.js')">
+        <img ng-src="resource/image/nav/queen.png"/>
+        <div class="caption two-line">
+          Distributed Computing (?)
+        </div>
+      </a>
+      
+      <a href="#/samelove.us" ng-class="getClass('samelove.us')">
+        <img ng-src="resource/image/nav/samelove.png"/>
+        <div class="caption">
+          Coding for Good
+        </div>
+      </a>
+
+      <a href="#/t-mobile-prepaid" ng-class="getClass('t-mobile-prepaid')">
+        <img ng-src="resource/image/nav/tmo-prepaid.png"/>
+        <div class="caption">
+          Big Website
+        </div>
+      </a>
+
+      <a href="#/t-mobile-testdrive" ng-class="getClass('t-mobile-testdrive')">
+        <img ng-src="resource/image/nav/tmo-test-drive.png"/>
+        <div class="caption">
+          Fancy Web App
+        </div>
+      </a>
+
+      <a href="#/flextag" ng-class="getClass('flextag')">
+        <img ng-src="resource/image/nav/flextag.png"/>
+        <div class="caption two-line">
+          Data Collection Tool
+        </div>
+      </a>
+
+      <a href="#/sun-clock" ng-class="getClass('sun-clock')">
+        <img ng-src="resource/image/nav/sun-clock.png"/>
+        <div class="caption">
+          Sun Clock
+        </div>
+      </a>
+
+      <a href="#/europe-trip-2010" ng-class="getClass('europe-trip-2010')">
+        <img ng-src="resource/image/nav/europe-trip.jpg"/>
+        <div class="caption">
+          Trip Planning
+        </div>
+      </a>
+
+      <a href="#/navigation" class="expand-toggle">
+        <img ng-src="resource/image/nav/view-more.png"/>
+        <div class="caption">
+          More
+        </div>
+      </a>   
     </header>
-
-    <section class="pictures-of-me">
-      <img 
-        ng-repeat="src in ['me2.jpg','friends.jpg','couch-surfing.jpg','calm.jpg','daft-code.jpg','artsy.jpg','motivational-poster-candidate.jpg','weird.jpg']" 
-        ng-src="resource/image/me/{{src}}" 
-      />
-    </section>
-
-    <section class="about-me">
-      <section ng-click="goHome()" class="about-me-words">
-        <p class="lead">I'm a software engineer in Silicon Valley.</p>
-        <p>
-          I love math and I love building things. Computer science allows 
-          me to do both, so I study and practice it. 
-        </p>
-        <p>
-          I'm good at building web applications, I'm currently building them 
-          at <a href="http://www.turn.com/">Turn</a> to make advertising 
-          better.
-        </p>
-        <p>
-          Find me at <a href="http://www.linkedin.com/in/ozanturgut">LinkedIn</a>, 
-          <a href="http://www.facebook.com/ozanturgut">Facebook</a>, 
-          <a href="https://github.com/ozanturgut">GitHub</a> or 
-          <a href="mailto:ozanturgut@gmail.com">ozanturgut@gmail.com</a>.
-        </p>
-      </section>
-
+    <section class="page-container">
       <ng-view></ng-view>
-    </section>
+    </seciton>
 
     <script src="dist/script.js"></script>
     <script type="text/javascript">

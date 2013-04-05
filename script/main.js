@@ -5,6 +5,9 @@ require('../resource/angularstrap.js');
 
 var app = angular.module('oztu', ['$strap.directives']);
 app.controller('pages', require('./pagesController.js'));
+app.controller('navigation', require('./navigationController.js'));
+
+app.value('$anchorScroll', angular.noop); 
 
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.otherwise({

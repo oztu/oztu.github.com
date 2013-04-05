@@ -11,174 +11,125 @@
   src: local('Noto Serif'), local('NotoSerif'), url(http://themes.googleusercontent.com/static/fonts/notoserif/v1/eCpfeMZI7q4jLksXVRWPQxsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
 }
 
+//http://colorschemedesigner.com/#0031T--rGFZLt
+$primary: #6C0000;
+$primaryText: white;
+$primaryAnchor: #F7A8A8;
+$primaryAnchorHighlight: white;
+
 body, html{
-	background-color: #e0c41a;
+	background-color: $primary;
+	color:$primaryText;
 	height:100%;
 	font-family: 'Noto Sans', sans-serif;
+
+	a{
+		outline: 0;
+		color:$primaryAnchor;
+
+		&:hover{
+			color:$primaryAnchorHighlight;
+		}
+	}
+	&.nav-expanded {
+		overflow:hidden;
+	}
 }
 
-.site-header{
-	background-color: #e0c41a;
-	position:relative;
-	padding-left:500px;
-	height:70px;
-	-webkit-transition: all 0.2s;
-	h1{		
-		position:absolute;
-		-webkit-transition: all 0.2s;
-		top:0px;
-		left:0px;
-		height:70px;
-		line-height:70px;
-		background-color: #981c24;
-		font-family: 'Noto Serif', serif;
-		width:450px;
-		color:#eee;
-		margin:0px;
-		padding:0px 25px;
-	}
-	h2{
-		-webkit-transition:all 0.2s;
-		opacity:0;
-		margin:0px;
-		margin-left:20px;
-		padding:0px;
-		height:70px;
-		line-height:70px;
 
-		&.visible{
+.nav-expanded .nav{
+	height:100%;
+	padding-right:0px;
+	overflow-y:auto;
+
+	.expand-toggle{
+		opacity:0;
+	}
+}
+
+.nav{
+	background-color: $primary;
+	position:absolute;
+	z-index:100;
+	top:0px;
+	left:0px;
+	right:0px;
+	height:210px;
+	padding-bottom:20px;
+	overflow:hidden;
+	-webkit-transition: all 0.2s;
+	border-bottom:5px solid #DD0000;
+	padding-right:195px;
+
+	a{
+		white-space: normal;
+		color:$primaryAnchor;
+		outline: 0;
+		position:relative;
+		display:inline-block;
+		margin:15px;
+		cursor:pointer;
+		height:190px;
+		width:150px;
+		vertical-align: middle;
+
+		&.expand-toggle{
+			-webkit-transition: all 0.2s;
+			position:absolute;
+			top:0px;
+			right:15px;
 			opacity:1;
 		}
-	}
-}
 
-.page-view{
-	.pictures-of-me{
-		height:0px;
-	}
+		&.active, &:hover{
+			text-decoration: none;
+			color:$primaryAnchorHighlight;
 
-	.site-header{
-		padding-left:300px;
-		h1{
-			width:250px;
-		}
-	}
-	
-	.about-me{
-		.about-me-words{
-			cursor:pointer;
-			width:250px;
-
-			p{
-				display:none;
+			img{
+				border-color: $primaryAnchorHighlight;
+			}
+			.caption{
+				color: $primaryAnchorHighlight;
 			}
 		}
 
-		ng-view{
-			margin-left:300px;
+		img{
+			-webkit-transition: all 0.2s;
+			width:150px;
+			height:150px;
+			border-radius:100px;
+			border: 5px solid $primaryAnchor;
+		}
+
+		.caption{
+			-webkit-transition: all 0.2s;
+			width:150px;
+			color:$primaryAnchor;
+			text-align:center;
+			height:44px;
+			line-height:44px;
+			font-size:18px;
+
+			&.two-line{
+				line-height:22px;
+			}
 		}
 	}
 }
 
-.pictures-of-me{
-	-webkit-transition:all 0.2s;
+.page-container{
+	margin-top:230px;
+}
+
+.top-banner{
+	border-bottom:5px solid #DD0000;
 	white-space:nowrap;
 	overflow:hidden;
 	height:350px;
-	background-color:#dac21a;
 
+	text-align:center;
 	img{
 		height:350px;
-		width:350px;
-	}
-}
-
-ng-view > section{
-	padding:8px 20px;
-}
-
-.about-me{
-	height:100%;
-	width:100%;
-	position:relative;
-	-webkit-transition: all 0.2s;
-		
-	.about-me-words{
-		display:block;
-		background-color: #981c24;
-		color:white;
-		position:absolute;
-		top:0px;
-		left:0px;
-		height:100%;
-
-		-webkit-transition: all 0.2s;
-		width:450px;
-		padding:10px 25px;
-
-		a{
-			color:#e0c41a;
-		}
-
-		p.lead{
-			font-size:22px;
-		}
-
-		p{
-			-webkit-transition: all 0.2s;
-			opacity:1;
-			font-size:16px;
-		}
-	}
-
-	ng-view{
-		display:block;
-		margin-left:500px;
-	}
-
-	.pages{
-		padding:15px;
-
-		a{
-			position:relative;
-			display:inline-block;
-			margin:15px;
-			cursor:pointer;
-			height:190px;
-			vertical-align: middle;
-
-			&:hover{
-				text-decoration: none;
-
-				img{
-					border-color:#5096b8;
-				}
-				.caption{
-					color:#5096b8;
-				}
-			}
-
-			img{
-				-webkit-transition: all 0.2s;
-				width:150px;
-				height:150px;
-				border-radius:100px;
-				border: 5px solid #d07a27;
-			}
-
-			.caption{
-				-webkit-transition: all 0.2s;
-				width:150px;
-				color:#981c24;
-				text-align:center;
-				height:44px;
-				line-height:44px;
-				font-size:18px;
-
-				&.two-line{
-					line-height:22px;
-				}
-			}
-		}
+		max-width:none;
 	}
 }
