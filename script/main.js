@@ -11,33 +11,24 @@ app.value('$anchorScroll', angular.noop);
 
 app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.otherwise({
-		templateUrl: 'template/index.htm'
+		templateUrl: 'post/about-me/index.htm'
 	}).when('/collage.js', {
-		templateUrl: 'template/collage.js.htm',
-		title:"Collage.js"
+		templateUrl: 'post/collagejs/index.htm'
 	}).when('/samelove.us', {
-		templateUrl: 'template/samelove.us.htm',
-		title:"Same Love"
+		templateUrl: 'post/samelove/index.htm'
 	}).when('/thrill.js', {
-		templateUrl: 'template/thrill.js.htm',
-		title:"Thrill.js"
+		templateUrl: 'post/thrilljs/index.htm'
 	}).when('/queen.js', {
-		templateUrl: 'template/queen.js.htm',
-		title:"Queen.js"
+		templateUrl: 'post/queenjs/index.htm'
 	}).when('/flextag', {
-		templateUrl: 'template/flextag.htm',
-		title:"Flextag"
+		templateUrl: 'post/flextag/index.htm'
 	}).when('/t-mobile-prepaid', {
-		templateUrl: 'template/tmo-prepaid.htm',
-		title:"T-Mobile Prepaid Site"
-	}).when('/t-mobile-testdrive', {
-		templateUrl: 'template/tmo-testdrive.htm',
-		title:"T-Mobile Testdrive"
+		templateUrl: 'post/t-mobile-prepaid/index.htm'
+	}).when('/t-mobile-test-drive', {
+		templateUrl: 'post/t-mobile-test-drive/index.htm'
 	}).when('/sun-clock', {
-		templateUrl: 'template/sun-clock.htm',
-		title:"Sun Clock"
+		templateUrl: 'post/sun-clock/index.htm'
 	}).when('/europe-trip-2010', {
-		templateUrl: 'template/europe-trip-2010.htm',
-		title:"My Trip to Europe in 2010"
+		templateUrl: 'post/europe-trip-2010/index.htm'
 	});
 }]);

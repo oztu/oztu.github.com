@@ -79,6 +79,7 @@ body, html{
 			top:0px;
 			right:15px;
 			opacity:1;
+			z-index:-1;
 		}
 
 		&.active, &:hover{
@@ -119,6 +120,23 @@ body, html{
 
 .page-container{
 	margin-top:230px;
+
+	a{
+		color:#f2ff64;
+	}
+
+	font-size:16px;
+	line-height:22px;
+}
+
+.description-section{
+	margin:0 auto; 
+	width:550px; 
+	padding:20px 25px;
+
+	p.lead{
+		font-size:22px; margin-bottom:12px;
+	}
 }
 
 .top-banner{
