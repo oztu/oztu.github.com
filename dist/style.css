@@ -4571,9 +4571,9 @@ body, html {
       text-decoration: none;
       color: white; }
       .nav a.active img, .nav a:hover img {
-        border-color: white; }
+        border-color: yellow; }
       .nav a.active .caption, .nav a:hover .caption {
-        color: white; }
+        color: yellow; }
     .nav a img {
       -webkit-transition: all 0.2s;
       width: 150px;
