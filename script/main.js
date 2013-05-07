@@ -30,5 +30,7 @@ app.config(['$routeProvider', function($routeProvider){
 		templateUrl: 'post/sun-clock/index.htm'
 	}).when('/europe-trip-2010', {
 		templateUrl: 'post/europe-trip-2010/index.htm'
+	}).when('/p', {
+		templateUrl: 'post/p/index.htm'
 	});
 }]);

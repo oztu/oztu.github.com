@@ -12,10 +12,10 @@
 }
 
 //http://colorschemedesigner.com/#0031T--rGFZLt
-$primary: #6C0000;
+$primary: #630000;
 $primaryText: white;
 $primaryAnchor: #F7A8A8;
-$primaryAnchorHighlight: white;
+$primaryAnchorHighlight: #F7A8A8;
 
 body, html{
 	background-color: $primary;
@@ -123,6 +123,10 @@ body, html{
 
 	a{
 		color:#f2ff64;
+
+		&:hover{
+			color:#f2ff64;
+		}
 	}
 
 	font-size:16px;
