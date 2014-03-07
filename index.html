@@ -1,115 +1,49 @@
 <!doctype html>
-<html ng-app="oztu">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Ozan Turgut's Website</title>
-    
-    <meta name="viewport" content="width=820, initial-scale=auto, user-scalable=yes">
-    <meta property="fb:admins" content="1582950001" />
-    <meta property="og:image" content="http://ozan.io/post/about-me/images/nav.png"/>
-    <meta property="og:title" content="Ozan Turgut's Website"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="http://ozan.io/"/>
-    <meta property="og:site_name" content="Ozan Turgut's Website"/>
-    <meta property="og:description" content="Ozan is a software engineer in Silicon Valley."/>
-    
-    <link href="resource/favicon.png" rel="shortcut icon" />
-    <link href='dist/style.css' rel='stylesheet' type='text/css'>
+<title>Ozan Turgut's Website</title>
+<style>
+	html,body{width:100%;height:100%; margin:0;}
+	section{
 
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  </head>
-  <body ng-controller="pages" class=" {{navExpanded && 'nav-expanded' || ''}}">
-    <header class="nav" ng-controller="navigation">
-      <a href="#/" ng-class="getClass('')">
-        <img ng-src="post/about-me/images/nav.png"/>
-        <div class="caption">
-          Ozan Turgut
-        </div>
-      </a>
-      <a href="#/p" ng-class="getClass('p')">
-        <img ng-src="post/p/images/nav.jpg"/>
-        <div class="caption two-line">
-          Peer-to-Peer with Browsers
-        </div>
-      </a>      
+	}
+	.hello{ 
+		background-image:url(hello.png);
+		background-size:cover;
+		background-repeat: no-repeat;
+		z-index: 10;
+		width:100%;
+		height:100%;
+		min-height:500px;
+		min-width:700px;
+		position:relative;
+	}
+	nav{
 
-      <a href="#/collage.js" ng-class="getClass('collage.js')">
-        <img ng-src="post/collagejs/images/nav.png"/>
-        <div class="caption two-line">
-          Futuristic Collages
-        </div>
-      </a>
-
-      <a href="#/queen.js" ng-class="getClass('queen.js')">
-        <img ng-src="post/queenjs/images/nav.png"/>
-        <div class="caption two-line">
-          Distributed JavaScripting
-        </div>
-      </a>
-      
-      <a href="#/thrill.js" ng-class="getClass('thrill.js')">
-        <img ng-src="post/thrilljs/images/nav.png"/>
-        <div class="caption two-line">
-          Distributed<br/>Test Runner
-        </div>
-      </a>
+		position:absolute;
+		bottom:100px;
+		right:0px;
+	}
+	nav img{margin:20px 50px;}
+	.images{
+		position:absolute;
+		bottom:0px;
+		white-space: nowrap;
+		z-index: -1;
+	}
+	.images img{
+		height:350px; 
+		width:350px;
+	}
+</style>
+<body>
+	<section class="hello">
+			<nav>
+		<a href="http://github.com/oztu"><img src="github.png"></a>
+		<a href="https://facebook.com/ozanturgut"><img src="facebook.png"></a>
+		<a href="http://www.linkedin.com/in/ozanturgut/"><img src="linkedin.png"></a>
+	</nav>
+	</section>
 
 
-      <a href="#/flextag" ng-class="getClass('flextag')">
-        <img ng-src="post/flextag/images/nav.png"/>
-        <div class="caption two-line">
-          Intuitive Data Collection Tool
-        </div>
-      </a>
-
-      <a href="#/samelove.us" ng-class="getClass('samelove.us')">
-        <img ng-src="post/samelove/images/nav.png"/>
-        <div class="caption two-line">
-          Coding for<br />LGBT Rights
-        </div>
-      </a> 
-      
-      <a href="#/t-mobile-prepaid" ng-class="getClass('t-mobile-prepaid')">
-        <img ng-src="post/t-mobile-prepaid/images/nav.png"/>
-        <div class="caption">
-          Big Website
-        </div>
-      </a>
-
-      <a href="#/t-mobile-test-drive" ng-class="getClass('t-mobile-test-drive')">
-        <img ng-src="post/t-mobile-test-drive/images/nav.png"/>
-        <div class="caption">
-          Fancy Web App
-        </div>
-      </a>
-
-      <a href="#/sun-clock" ng-class="getClass('sun-clock')">
-        <img ng-src="post/sun-clock/images/nav.png"/>
-        <div class="caption">
-          Sun Clock
-        </div>
-      </a>
-
-      <a href="#/europe-trip-2010" ng-class="getClass('europe-trip-2010')">
-        <img ng-src="post/europe-trip-2010/images/nav.jpg"/>
-        <div class="caption">
-          Trip Planning
-        </div>
-      </a>
-
-      <a href="#/navigation" class="expand-toggle">
-        <img ng-src="resource/image/nav-view-more.png"/>
-        <div class="caption">
-          More
-        </div>
-      </a>   
-    </header>
-    <section class="page-container">
-      <ng-view></ng-view>
-    </seciton>
-
-    <script src="dist/script.js"></script>
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-4017245-5']);
@@ -121,27 +55,4 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-
-    <!--[if !IE]><script>
-    (function() {
-      var doc = document
-          addEvent = 'addEventListener',
-          type = 'gesturestart',
-          qsa = 'querySelectorAll',
-          scales = [1, 1],
-          meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
-
-      function fix() {
-        meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
-        doc.removeEventListener(type, fix, true);
-      }
-
-      if ((meta = meta[meta.length - 1]) && addEvent in doc) {
-        fix();
-        scales = [.25, 1.6];
-        doc[addEvent](type, fix, true);
-      }
-    }());
-    </script><![endif]-->
-  </body>
-</html>
+</body>
