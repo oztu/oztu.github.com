@@ -1,5 +1,6 @@
 <!doctype html>
 <title>Ozan Turgut's Website</title>
+<meta name="viewport" content="width=700, user-scalable=no">
 <style>
 	html,body{width:100%;height:100%; margin:0;}
 	section{
@@ -7,7 +8,8 @@
 	}
 	.hello{ 
 		background-image:url(hello.png);
-		background-size:cover;
+		background-size:contain;
+		background-position: top center;
 		background-repeat: no-repeat;
 		z-index: 10;
 		width:100%;
@@ -17,10 +19,10 @@
 		position:relative;
 	}
 	nav{
-
 		position:absolute;
 		bottom:100px;
-		right:0px;
+		width:100%;
+		text-align: center;
 	}
 	nav img{margin:20px 50px;}
 	.images{
