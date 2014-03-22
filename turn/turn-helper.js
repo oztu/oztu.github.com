@@ -11,7 +11,7 @@ jqueryScript.onload = loadClippy;
 
 function loadClippy(){
 	var script = document.createElement('script');
-	script.src='http://oztu.github.io/turn/clippy.min.js';
+	script.src='http://oztu.github.io/turn/clippy.js';
 	document.body.appendChild(script);
 	script.onload = initTurnHelper;
 }
