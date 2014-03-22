@@ -1,6 +1,6 @@
 .clippy, .clippy-balloon {
-    position: fixed;
-    z-index: 1000;
+    position: fixed!important;
+    z-index: 1000!important;
     cursor: pointer;
 }
 

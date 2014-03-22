@@ -1,5 +1,5 @@
 var styles = document.createElement('link');
-styles.src='https://oztu.github.io/turn/clippy.css';
+styles.src='http://oztu.github.io/turn/clippy.css';
 document.body.appendChild(styles);
 
 var jqueryScript = document.createElement('script');
@@ -10,7 +10,7 @@ jqueryScript.onload = loadClippy;
 
 function loadClippy(){
 	var script = document.createElement('script');
-	script.src='https://oztu.github.io/turn/clippy.min.js';
+	script.src='http://oztu.github.io/turn/clippy.min.js';
 	document.body.appendChild(script);
 	script.onload = initTurnHelper;
 }
