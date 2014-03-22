@@ -1,5 +1,6 @@
 var styles = document.createElement('link');
-styles.src='http://oztu.github.io/turn/clippy.css';
+styles.rel="stylesheet";
+styles.href='http://oztu.github.io/turn/clippy.css';
 document.body.appendChild(styles);
 
 var jqueryScript = document.createElement('script');
