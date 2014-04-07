@@ -1,4 +1,122 @@
-<!doctype html><title>Turn Helpy Bookmarklet</title>
-Drag this link to your bookmarks: <a href="javascript:var script = document.createElement('script');script.src='https://oztu.github.io/turn/turn-helper.js';document.body.appendChild(script);">Turn Helpy</a>
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<title>Turn Helpy Bookmarklet</title>
+	<style>
+	/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  padding-bottom: 19px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+	</style>
+</head>
+<body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Turn Helpy <small>alpha</small></h1>
+        <p>
+        	Simply drag to the green button to your bookmarkets and click on it whenever you
+        	need help within the Turn console.
+        </p>
+        <p><a class="btn btn-lg btn-success" href="javascript:var script = document.createElement('script');script.src='https://s3.amazonaws.com/turn-helpy/turn-helper.js';document.body.appendChild(script);" role="button">Turn Helpy</a></p>
+    </div>
+
+    <div class="row marketing">
+    	<div class="col-lg-6">
+          <h4>Innovation</h4>
+          <p>We're proud to provide a first glimpse into the revolutionary step in user assistance: Turn Helpy.</p>
+
+          <h4>Learning</h4>
+          <p>As you move page to page and use Helpy, it will learn to provide you more relevant assistance.</p>
+        
+        </div>
+    	<div class="col-lg-6">
+          <h4>Meaningful Contextual Help</h4>
+          <p>Helpy is a bookmarklet which you can click on whenever you're in the Turn Console to receive meaningful contextual help and assistance.</p>
+
+          <h4>Alpha Release</h4>
+          <p>This is an early glimpse to Helpy, beware that some of his assistance may be misguided. Simply refresh a page to turn off Helpy.</p>
+
+        
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+</body>
+</html>
