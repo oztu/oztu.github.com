@@ -1,0 +1,64 @@
+==================================================================
+https://keybase.io/ozan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ozan.io
+  * I am ozan (https://keybase.io/ozan) on keybase.
+  * I have a public key with fingerprint D794 333E F6BB 00BC F79B  6960 80D3 CE64 5A51 F9D7
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "d794333ef6bb00bcf79b696080d3ce645a51f9d7",
+            "host": "keybase.io",
+            "key_id": "80d3ce645a51f9d7",
+            "uid": "88280e32d536a6b09066d6c4c6fe8c00",
+            "username": "ozan"
+        },
+        "service": {
+            "hostname": "ozan.io",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1405370315,
+    "expire_in": 157680000,
+    "prev": "e6cd79f6e0fa8124432239f1d45a8ed7f3a9fe3a5d689e98b39f036a1e94764a",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v0.1.23
+Comment: https://keybase.io/crypto
+
+yMHbAnicbVFfSBRPHL878+xOCyOCKP/Q+iDKpXO3e7O7Rz+tIJFSJESMvDp2d2bv
+FnX33NuzThNSxAQltJAosAuLqIT+olFCWUlphj2Vj4kJpT6IaAVZ6KwW/B6al2U/
+f+c735EtCRantSQTj112FaZbx4e/Ri3lI4XjjZSooRjla6Sq8fpHVtQg1sO6ohqU
+j0Isz9A0jWUoigCIkszyIuQh4ACiJQwZr+B1yzxiKRcV0iKmg8SIQgTnKRrByE9A
+QQT9hz66QXAeDmDag7w0FKAIeAAhghIjQRlzEgCmMIJ1VajFRK01CCrV5KIIUq9I
+BGlcr/0fu9Eb1jVDk7QaAoYMI+wzPUYsbIpOYTHwxx4QFRWRcYmhHusRRVMpn5so
+JUMx89wM8NIsoN1eF4VPhxUdBxRT4WUhB8gxa3A9icRQIu8kQwxkgXN7GIb2eGhe
+diMyLocRK9MCL2Na8CLI8ZjnREICMq4b8wwLGYH0R3CdqlE+mlxTCJLIiBJUBSOq
+Y6rp5bB/k8XqtNgTbebCLE5H6t81dm1PWklsn81feqMxPcnJ863+yqKpY6OlV3r7
+nfOLuwvampLLj86Iq2jqTNbNWAW+PjNZtnkX6p85NGUry20pda36fzfMsd2Ohb7n
+33Y+Xq4FBeny0NtiZ4r1cFf7+7zOWyXR1HzcmV211L2vMyFvIiun49qlFyO2nMXq
+160T/sLbaS7Hw+myL09HKxP6qjs8O+4OnjseerRyLy17mx2OHcjYmrb6JNaWMp70
+6mSFPV5cOT24dGegyJGYdeNjd+6J/T/2OONB33+87/yD1hY9PpQZH8j42ZxppE/a
+Lw4fPJt64d3sQpU91Fdna+75frUAI+Wztnz/14cjFb3Pgp/m9o7WzK0BRt4Itw==
+=H4EG
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ozan
+
+==================================================================
